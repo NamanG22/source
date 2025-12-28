@@ -13,7 +13,7 @@ function Section6() {
           </div>
         </div>
         <a 
-          href="https://app.sourceready.com/api/auth/login?screen_hint=signup" 
+          href="https://app.sourcentral.com/api/auth/login?screen_hint=signup" 
           target="_blank" 
           rel="noopener noreferrer"
           className="link-block-3-copy w-inline-block"

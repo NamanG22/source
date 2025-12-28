@@ -248,7 +248,7 @@ function MobileMenu({ isOpen, onClose }) {
                     <div className="menu-item-desc">Join us in AI-driven product sourcing</div>
                   </div>
                 </a>
-                <a href="https://help.sourceready.com" target="_blank" rel="noopener noreferrer" className="menu-item" onClick={handleClose}>
+                <a href="https://help.sourcentral.com" target="_blank" rel="noopener noreferrer" className="menu-item" onClick={handleClose}>
                   <div className="menu-item-text">
                     <div className="menu-item-title">Help</div>
                     <div className="menu-item-desc">Find help and answers to common questions</div>
@@ -259,38 +259,38 @@ function MobileMenu({ isOpen, onClose }) {
                 <div className="menu-category-title">Comparison</div>
                 <a href="/competitor/competitor-alibaba" className="menu-item" onClick={handleClose}>
                   <div className="menu-item-text">
-                    <div className="menu-item-title">SourceReady vs Alibaba</div>
+                    <div className="menu-item-title">Source Central vs Alibaba</div>
                     <div className="menu-item-desc">Choosing the right sourcing partner</div>
                   </div>
                 </a>
                 <a href="/competitor/competitor-global-sources" className="menu-item" onClick={handleClose}>
                   <div className="menu-item-text">
-                    <div className="menu-item-title">SourceReady vs Global Sources</div>
+                    <div className="menu-item-title">Source Central vs Global Sources</div>
                     <div className="menu-item-desc">Smarter choices for global sourcing</div>
                   </div>
                 </a>
                 <a href="/competitor/competitor-importyeti" className="menu-item" onClick={handleClose}>
                   <div className="menu-item-text">
-                    <div className="menu-item-title">SourceReady vs ImportYeti</div>
+                    <div className="menu-item-title">Source Central vs ImportYeti</div>
                     <div className="menu-item-desc">From browsing to AI matching</div>
                   </div>
                 </a>
                 <a href="/competitor/competitor-importgenius" className="menu-item" onClick={handleClose}>
                   <div className="menu-item-text">
-                    <div className="menu-item-title">SourceReady vs ImportGenius</div>
+                    <div className="menu-item-title">Source Central vs ImportGenius</div>
                     <div className="menu-item-desc">From raw data to intelligent decisions</div>
                   </div>
                 </a>
                 <a href="/competitor/competitor-chatgpt" className="menu-item" onClick={handleClose}>
                   <div className="menu-item-text">
-                    <div className="menu-item-title">SourceReady vs ChatGPT</div>
+                    <div className="menu-item-title">Source Central vs ChatGPT</div>
                     <div className="menu-item-desc">From general AI to sourcing intelligence</div>
                   </div>
                 </a>
               </div>
               <div className="menu-category">
                 <div className="menu-category-title">Tool</div>
-                <a href="https://www.sourceready.com/tariff-calculator" className="menu-item" onClick={handleClose}>
+                <a href="https://www.sourcentral.com/tariff-calculator" className="menu-item" onClick={handleClose}>
                   <div className="menu-item-text">
                     <div className="menu-item-title">Tariff Calculator</div>
                     <div className="menu-item-desc">Quickly calculate total import duties</div>
@@ -307,9 +307,9 @@ function MobileMenu({ isOpen, onClose }) {
         <div className="menu-divider"></div>
         <a href="https://airtable.com/appYe8ucpUyLBWajT/pagcX2GvDezFe6Xev/form?prefill_ID=" target="_blank" rel="noopener noreferrer" className="menu-link" onClick={handleClose}>Join as supplier</a>
         <div className="menu-divider"></div>
-        <a href="https://login.sourceready.com/u/login?state=hKFo2SBqSHE1VC1oai1VUkQ3T3VCMjlLRFJuOUVPV3lJR2RSQaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEpscnlyM1NJLTE2b21RTDZvc3hmNjgxU2o3VnpvUXUzo2NpZNkgWnQ5b3VnRllYZzR1UkdMM2x0NVhKck1DU0Q3aEZmR1Y" target="_blank" rel="noopener noreferrer" className="menu-link" onClick={handleClose}>Log in</a>
+        <a href="https://login.sourcentral.com/u/login?state=hKFo2SBqSHE1VC1oai1VUkQ3T3VCMjlLRFJuOUVPV3lJR2RSQaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEpscnlyM1NJLTE2b21RTDZvc3hmNjgxU2o3VnpvUXUzo2NpZNkgWnQ5b3VnRllYZzR1UkdMM2x0NVhKck1DU0Q3aEZmR1Y" target="_blank" rel="noopener noreferrer" className="menu-link" onClick={handleClose}>Log in</a>
         <div className="menu-divider"></div>
-        <a href="https://app.sourceready.com/api/auth/login?screen_hint=signup" target="_blank" rel="noopener noreferrer" className="menu-button-primary" onClick={handleClose}>Sign up for free</a>
+        <a href="https://app.sourcentral.com/api/auth/login?screen_hint=signup" target="_blank" rel="noopener noreferrer" className="menu-button-primary" onClick={handleClose}>Sign up for free</a>
       </div>
     </div>
   )

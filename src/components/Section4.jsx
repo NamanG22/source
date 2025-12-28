@@ -21,7 +21,7 @@ function Section4() {
   const testimonials = [
     {
       id: 1,
-      text: "SourceReady cut our sourcing time by over 80%. We found reliable suppliers in Vietnam and Mexico within days—saving time, avoiding tariffs, and winning more deals",
+      text: "Source Central cut our sourcing time by over 80%. We found reliable suppliers in Vietnam and Mexico within days—saving time, avoiding tariffs, and winning more deals",
       author: "Evan Rosenberg",
       company: "PHPrints",
       logo: "https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/682bf92747b07210cc2144fe_customer_logo_01.avif",
@@ -29,7 +29,7 @@ function Section4() {
     },
     {
       id: 2,
-      text: "SourceReady helped us diversify beyond China, speed up our RFQ process, and generate fresh product ideas. We've grown from 3 to 12 seats in just three months—it's now an essential part of our workflow.",
+      text: "Source Central helped us diversify beyond China, speed up our RFQ process, and generate fresh product ideas. We've grown from 3 to 12 seats in just three months—it's now an essential part of our workflow.",
       author: "Ben Zhang",
       company: "Greater Pacific",
       logo: "https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/682bf9288e001ea58de50bae_customer_logo_02.avif",
@@ -37,7 +37,7 @@ function Section4() {
     },
     {
       id: 3,
-      text: "SourceReady makes sourcing in hard-to-navigate regions like Cambodia seamless. It's helped us vet low-MOQ suppliers faster and laid the groundwork to scale our services for D2C and SMB clients.",
+      text: "Source Central makes sourcing in hard-to-navigate regions like Cambodia seamless. It's helped us vet low-MOQ suppliers faster and laid the groundwork to scale our services for D2C and SMB clients.",
       author: "Jessica",
       company: "Li & Fung",
       logo: "https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/682bf92734a7233a5bf6165c_customer_logo_04.avif",
@@ -45,7 +45,7 @@ function Section4() {
     },
     {
       id: 4,
-      text: "I found SourceReady a great tool to enhance our sourcing efforts with highly reliable data, multiple ways to query data and find the right vendors in the right locations. The AI image functions very beneficial to insure we were comparing apples to apples.",
+      text: "I found Source Central a great tool to enhance our sourcing efforts with highly reliable data, multiple ways to query data and find the right vendors in the right locations. The AI image functions very beneficial to insure we were comparing apples to apples.",
       author: "Chris Rork",
       company: "Muev Brand",
       logo: "https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/682bf927daf20f287581ae2c_customer_logo_03.avif",
@@ -87,10 +87,10 @@ function Section4() {
     if (products > 0 && spend > 0 && hours > 0) {
       // Calculate ROI metrics
       // Assumptions:
-      // - SourceReady saves 80% of sourcing time
+      // - Source Central saves 80% of sourcing time
       // - Average hourly rate: $50
-      // - SourceReady saves 5% on purchasing costs through better quotes
-      // - SourceReady subscription: $10,000/year (example)
+      // - Source Central saves 5% on purchasing costs through better quotes
+      // - Source Central subscription: $10,000/year (example)
       
       const hoursSaved = products * hours * 0.8
       const hourlyRate = 50
@@ -148,7 +148,7 @@ function Section4() {
           
           <div className="div-block-2818">
             <div className="div-block-2819">
-              <div className="text-block-138">Before SourceReady</div>
+              <div className="text-block-138">Before Source Central</div>
               <div className="div-block-2820">
                 <div className="div-block-2821">
                   <div className="text-block-139">Supplier listings</div>
@@ -182,7 +182,7 @@ function Section4() {
             </div>
             
             <div className="div-block-2819 after-section">
-              <div className="text-block-138">After SourceReady</div>
+              <div className="text-block-138">After Source Central</div>
               <div className="ai-agent-container">
                 <div className="feature-bubbles">
                   <div className="feature-bubble bubble-1">Custom Questions</div>
@@ -205,7 +205,7 @@ function Section4() {
           <div className="code-embed-921 w-embed">
             <CalculatorIcon />
           </div>
-          <div className="text-block-140">SourceReady ROI Calculator</div>
+          <div className="text-block-140">Source Central ROI Calculator</div>
           <div className="text-block-141">Enter your annual sourcing spend and instantly see your efficiency gains: hours saved, faster time-to-market, and cost reductions—all quantified in seconds</div>
         </div>
 

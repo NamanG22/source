@@ -17,7 +17,7 @@ function Section3() {
         <div className="div-block-2810">
           <h2 className="heading-9-copy short">The World's Most Comprehensive Supplier Database</h2>
           <div className="text-block-25-copy-11">
-            SourceReady's AI pipeline pulls data from hundreds of trusted sources—including U.S. customs filings, government registries, trade-show rosters, and supplier websites—to create the industry's most comprehensive, cross-verified supplier database.
+            Source Central's AI pipeline pulls data from hundreds of trusted sources—including U.S. customs filings, government registries, trade-show rosters, and supplier websites—to create the industry's most comprehensive, cross-verified supplier database.
           </div>
         </div>
 
@@ -60,7 +60,7 @@ function Section3() {
               loading="lazy" 
               sizes="(max-width: 3840px) 100vw, 3840px" 
               srcSet="https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c81c8e94e1cb379b5ae_b86b0a9abaf9f04157619f7818f50e58_pic_02-p-500.avif 500w, https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c81c8e94e1cb379b5ae_b86b0a9abaf9f04157619f7818f50e58_pic_02-p-800.avif 800w, https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c81c8e94e1cb379b5ae_b86b0a9abaf9f04157619f7818f50e58_pic_02-p-1080.avif 1080w, https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c81c8e94e1cb379b5ae_b86b0a9abaf9f04157619f7818f50e58_pic_02.avif 3840w" 
-              alt="Connect with your ideal supplier from 500,000+ verified manufacturers in 15 categories across 30 countries with SourceReady's AI-powered sourcing platform." 
+              alt="Connect with your ideal supplier from 500,000+ verified manufacturers in 15 categories across 30 countries with Source Central's AI-powered sourcing platform." 
               className="image-59"
             />
 

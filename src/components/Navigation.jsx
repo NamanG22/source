@@ -15,7 +15,7 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
         <div className="nav-container">
           <div className="nav-left">
             <a href="/" className="logo-link">
-              <div className="logo-text">Source Ready</div>
+              <div className="logo-text">Source Central</div>
             </a>
             <div 
               className="nav-link-wrapper"
@@ -59,9 +59,9 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
             <a href="/pricing" className="nav-link">Pricing</a>
           </div>
           <div className="nav-right">
-            <a href="https://calendly.com/sourceready/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="nav-text-link">Book a demo</a>
-            <a href="https://app.sourceready.com/api/auth/login" className="nav-text-link">Log in</a>
-            <a href="https://app.sourceready.com/api/auth/login?screen_hint=signup" className="nav-button">Sign up</a>
+            <a href="https://calendly.com/sourcentral/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="nav-text-link">Book a demo</a>
+            <a href="https://app.sourcentral.com/api/auth/login" className="nav-text-link">Log in</a>
+            <a href="https://app.sourcentral.com/api/auth/login?screen_hint=signup" className="nav-button">Sign up</a>
             <div className="mobile-menu-toggle">
               <button 
                 className="menu-button"
