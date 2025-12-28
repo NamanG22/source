@@ -1,0 +1,163 @@
+/* Navigation Bar Styles */
+.nav-bar {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.02em;
+}
+
+.nav-link-wrapper {
+  position: relative;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #111827;
+}
+
+.dropdown-icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-text-link {
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+
+.nav-text-link:hover {
+  color: #111827;
+}
+
+.nav-button {
+  background-color: #111827;
+  color: #ffffff;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.nav-button:hover {
+  background-color: #1f2937;
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  transition: color 0.2s ease;
+}
+
+.menu-button:hover {
+  color: #111827;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  color: currentColor;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-bar {
+    padding: 1rem;
+  }
+
+  .nav-left {
+    gap: 1rem;
+  }
+
+  .nav-link span,
+  .nav-text-link {
+    display: none;
+  }
+
+  .nav-button {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .logo-text {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-left {
+    gap: 0.75rem;
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
+  }
+}
+
