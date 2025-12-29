@@ -2,7 +2,13 @@
 .section-2 {
   width: 100%;
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background: linear-gradient(to bottom,
+    #ffffff 5%,
+    #ffffff 10%,
+    transparent 20%,
+    transparent 100%
+  );
+  background-color: transparent;
 }
 
 .div-block-2794 {
@@ -222,6 +228,7 @@
 .view-detail {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.875rem 2rem;
   background-color: #111827;
@@ -231,6 +238,7 @@
   font-weight: 500;
   transition: background-color 0.2s ease, transform 0.2s ease;
   margin-top: 1rem;
+  box-sizing: border-box;
 }
 
 .link-block-3-copy-copy:hover,
@@ -263,6 +271,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  margin-top: 100px;
 }
 
 .desktop-view {

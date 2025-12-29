@@ -1,6 +1,11 @@
 .App {
   width: 100%;
   min-height: 100vh;
+  background: linear-gradient(to right, 
+    #e0f2fe 0%, 
+    #f3e8ff 50%, 
+    #ffffff 100%
+  );
 }
 
 

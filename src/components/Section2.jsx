@@ -77,186 +77,67 @@ function Section2() {
 
   return (
     <div className="section-2">
-      <div className="div-block-2794">
-        <h2 className="heading-9-copy">Human Thinking. AI Speed. Better Sourcing.</h2>
-        
-        {/* Supplier Discovery Section */}
-        <div className="div-block-2795">
-          <div className="div-block-2796">
-            <div className="text-block-133">Find the perfect supplier for any product with AI-powered supplier research</div>
-            
-            {/* Desktop Tabs List */}
-            <div className="tabs-list">
-              {supplierDiscoveryTabs.map((tab, index) => (
-                <div key={tab.id}>
-                  <button
-                    onClick={() => setActiveTab1(index)}
-                    className={`tab-button-${index + 1} ${activeTab1 === index ? 'active' : ''}`}
-                  >
-                    <div className="tab-title">{tab.title}</div>
-                    <div className={`tab-desc-${index + 1}`}>{tab.desc}</div>
-                    {tab.hasWatchDemo && (
-                      <a href="#" className={`link-block-687${index > 0 ? index + 1 : ''} w-inline-block`}>
-                        <div className="text-block-149">Watch demo</div>
-                      </a>
-                    )}
-                    {tab.comingSoon && (
-                      <div className="notes-for-upcoming">Full release coming soon.</div>
-                    )}
-                  </button>
-                  {index < supplierDiscoveryTabs.length - 1 && <div className="div-block-2801"></div>}
-                </div>
-              ))}
-            </div>
-
-            {/* Mobile Tabs List */}
-            <div className="tabs-list-mobile">
-              {supplierDiscoveryTabs.map((tab, index) => (
-                <div key={tab.id}>
-                  <button
-                    onClick={() => setActiveTab1(index)}
-                    className={`tab-button-${index + 1} ${activeTab1 === index ? 'active' : ''}`}
-                  >
-                    <div className="tab-title">{tab.title}</div>
-                    <div className={`tab-desc-${index + 1}`}>{tab.desc}</div>
-                    {tab.hasWatchDemo && (
-                      <a href="#" className="link-block-687 w-inline-block">
-                        <div className="text-block-149">Watch demo</div>
-                      </a>
-                    )}
-                    {tab.comingSoon && (
-                      <div className="notes-for-upcoming">Full release coming soon.</div>
-                    )}
-                  </button>
-                  <div className={`tab-panel-${index + 1}-${index + 1}`} style={{ display: activeTab1 === index ? 'block' : 'none' }}>
-                    <img
-                      src={tab.image}
-                      srcSet={`
-                        ${tab.image.replace('.avif', '-p-500.avif')} 500w,
-                        ${tab.image.replace('.avif', '-p-800.avif')} 800w,
-                        ${tab.image.replace('.avif', '-p-1080.avif')} 1080w,
-                        ${tab.image} 1920w
-                      `}
-                      sizes="(max-width: 1919px) 100vw, 1920px"
-                      alt=""
-                      className="tab-panel-bg"
-                      loading="lazy"
-                    />
-                  </div>
-                  {index < supplierDiscoveryTabs.length - 1 && <div className="div-block-2801"></div>}
-                </div>
-              ))}
-            </div>
-
-            <a href="/supplier-discovery" target="_blank" rel="noopener noreferrer" className="link-block-3-copy-copy w-inline-block">
-              <div className="text-block-3">View detail</div>
-              <div className="code-embed-924 w-embed">
-                <ArrowIcon />
-              </div>
-            </a>
-          </div>
-
-          {/* Desktop Tab Content */}
-          <div className="tabs-contentes">
-            {supplierDiscoveryTabs.map((tab, index) => (
-              <div
-                key={tab.id}
-                className={`tab-panel-${index + 1}`}
-                style={{ display: activeTab1 === index ? 'block' : 'none' }}
-              >
-                <img
-                  src={tab.image}
-                  srcSet={`
-                    ${tab.image.replace('.avif', '-p-500.avif')} 500w,
-                    ${tab.image.replace('.avif', '-p-800.avif')} 800w,
-                    ${tab.image.replace('.avif', '-p-1080.avif')} 1080w,
-                    ${tab.image} 1920w
-                  `}
-                  sizes="(max-width: 1919px) 100vw, 1920px"
-                  alt=""
-                  className="tab-panel-bg"
-                  loading={index === 0 ? 'eager' : 'lazy'}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Supplier Outreach Section */}
-        <div className="div-block-2802">
-          <div className="desktop-view">
-            <div className="div-block-2803">
-              <div className="text-block-133-copy">Get more quotes in less time<br />by leveraging AI-powered supplier outreach</div>
-              <a href="/supplier-outreach" target="_blank" rel="noopener noreferrer" className="view-detail w-inline-block">
-                <div className="text-block-3">View detail</div>
-                <div className="code-embed-924 w-embed">
-                  <ArrowIcon />
-                </div>
-              </a>
-            </div>
-
-            <div className="tabs-content">
-              {supplierOutreachTabs.map((tab, index) => (
-                <div
-                  key={tab.id}
-                  className={`tab-panel-${index + 8}`}
-                  style={{ display: activeTab2 === index ? 'block' : 'none' }}
-                >
-                  <img
-                    src={tab.image}
-                    srcSet={`
-                      ${tab.image.replace('.avif', '-p-500.avif')} 500w,
-                      ${tab.image.replace('.avif', '-p-800.avif')} 800w,
-                      ${tab.image.replace('.avif', '-p-1080.avif')} 1080w,
-                      ${tab.image.replace('.avif', '-p-1600.avif')} 1600w,
-                      ${tab.image.replace('.avif', '-p-2000.avif')} 2000w,
-                      ${tab.image} 3648w
-                    `}
-                    sizes="(max-width: 3648px) 100vw, 3648px"
-                    alt=""
-                    className="tab-panel-bg"
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-
-            <div className="tabs-list-horizon">
-              {supplierOutreachTabs.map((tab, index) => (
-                <button
-                  key={tab.id}
-                  onClick={() => setActiveTab2(index)}
-                  className={`tab-button-${index + 8} ${activeTab2 === index ? 'active' : ''}`}
-                >
-                  <div className={`div-block-${2805 + index}`}></div>
-                  <div className="tab-title">{tab.title}</div>
-                  <div className={`tab-desc-${index + 8}`}>{tab.desc}</div>
-                  {tab.comingSoon && (
-                    <div className="notes-for-upcoming-2">Full release coming soon.</div>
-                  )}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          {/* Mobile View */}
-          <div className="mobile-view">
+      <div style={{ margin: '10px' , backgroundColor: 'white', padding: '30px' }}>
+        <div className="div-block-2794">
+          <h2 className="heading-9-copy">The First Human-Quality AI Sourcing Agent</h2>
+          
+          {/* Supplier Discovery Section */}
+          <div className="div-block-2795">
             <div className="div-block-2796">
-              <div className="text-block-133">Get more quotes in less time by leveraging AI-powered supplier outreach</div>
-              <div className="tabs-list-mobile">
-                {supplierOutreachTabs.map((tab, index) => (
+              <div className="text-block-133">Find the perfect supplier for any product with AI-powered supplier research</div>
+              
+              {/* Desktop Tabs List */}
+              <div className="tabs-list">
+                {supplierDiscoveryTabs.map((tab, index) => (
                   <div key={tab.id}>
                     <button
-                      onClick={() => setActiveTab2(index)}
-                      className={`tab-button-${index + 8} ${activeTab2 === index ? 'active' : ''}`}
+                      onClick={() => setActiveTab1(index)}
+                      className={`tab-button-${index + 1} ${activeTab1 === index ? 'active' : ''}`}
                     >
                       <div className="tab-title">{tab.title}</div>
-                      <div className={`tab-desc-${index + 8}-${index + 8}`}>{tab.desc}</div>
-                      {tab.comingSoon && (
-                        <div className="notes-for-upcoming-2-2">Full release coming soon.</div>
+                      {activeTab1 === index && (
+                        <>
+                          <div className={`tab-desc-${index + 1}`}>{tab.desc}</div>
+                          {tab.hasWatchDemo && (
+                            <a href="#" className={`link-block-687${index > 0 ? index + 1 : ''} w-inline-block`}>
+                              <div className="text-block-149">Watch demo</div>
+                            </a>
+                          )}
+                          {tab.comingSoon && (
+                            <div className="notes-for-upcoming">Full release coming soon.</div>
+                          )}
+                        </>
                       )}
                     </button>
-                    <div className={`tab-panel-${index + 8}-${index + 8}`} style={{ display: activeTab2 === index ? 'block' : 'none' }}>
+                    {index < supplierDiscoveryTabs.length - 1 && <div className="div-block-2801"></div>}
+                  </div>
+                ))}
+              </div>
+
+              {/* Mobile Tabs List */}
+              <div className="tabs-list-mobile">
+                {supplierDiscoveryTabs.map((tab, index) => (
+                  <div key={tab.id}>
+                    <button
+                      onClick={() => setActiveTab1(index)}
+                      className={`tab-button-${index + 1} ${activeTab1 === index ? 'active' : ''}`}
+                    >
+                      <div className="tab-title">{tab.title}</div>
+                      {activeTab1 === index && (
+                        <>
+                          <div className={`tab-desc-${index + 1}`}>{tab.desc}</div>
+                          {tab.hasWatchDemo && (
+                            <a href="#" className="link-block-687 w-inline-block">
+                              <div className="text-block-149">Watch demo</div>
+                            </a>
+                          )}
+                          {tab.comingSoon && (
+                            <div className="notes-for-upcoming">Full release coming soon.</div>
+                          )}
+                        </>
+                      )}
+                    </button>
+                    <div className={`tab-panel-${index + 1}-${index + 1}`} style={{ display: activeTab1 === index ? 'block' : 'none' }}>
                       <img
                         src={tab.image}
                         srcSet={`
@@ -271,16 +152,145 @@ function Section2() {
                         loading="lazy"
                       />
                     </div>
-                    {index < supplierOutreachTabs.length - 1 && <div className="div-block-2801"></div>}
+                    {index < supplierDiscoveryTabs.length - 1 && <div className="div-block-2801"></div>}
                   </div>
                 ))}
               </div>
-              <a href="/supplier-outreach" target="_blank" rel="noopener noreferrer" className="link-block-3-copy-copy w-inline-block">
+
+              <a href="/supplier-discovery" target="_blank" rel="noopener noreferrer" className="link-block-3-copy-copy" style={{ width: 'fit-content' }}>
                 <div className="text-block-3">View detail</div>
-                <div className="code-embed-924 w-embed">
+                <div className="code-embed-924">
                   <ArrowIcon />
                 </div>
               </a>
+            </div>
+
+            {/* Desktop Tab Content */}
+            <div className="tabs-contentes">
+              {supplierDiscoveryTabs.map((tab, index) => (
+                <div
+                  key={tab.id}
+                  className={`tab-panel-${index + 1}`}
+                  style={{ display: activeTab1 === index ? 'block' : 'none' }}
+                >
+                  <img
+                    src={tab.image}
+                    srcSet={`
+                      ${tab.image.replace('.avif', '-p-500.avif')} 500w,
+                      ${tab.image.replace('.avif', '-p-800.avif')} 800w,
+                      ${tab.image.replace('.avif', '-p-1080.avif')} 1080w,
+                      ${tab.image} 1920w
+                    `}
+                    sizes="(max-width: 1919px) 100vw, 1920px"
+                    alt=""
+                    className="tab-panel-bg"
+                    loading={index === 0 ? 'eager' : 'lazy'}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Supplier Outreach Section */}
+          <div className="div-block-2802">
+            <div className="desktop-view">
+              <div className="div-block-2803">
+                <div className="text-block-133-copy">Get more quotes in less time<br />by leveraging AI-powered supplier outreach</div>
+                <a href="/supplier-outreach" target="_blank" rel="noopener noreferrer" className="view-detail w-inline-block">
+                  <div className="text-block-3">View detail</div>
+                  <div className="code-embed-924 w-embed">
+                    <ArrowIcon />
+                  </div>
+                </a>
+              </div>
+
+              <div className="tabs-content">
+                {supplierOutreachTabs.map((tab, index) => (
+                  <div
+                    key={tab.id}
+                    className={`tab-panel-${index + 8}`}
+                    style={{ display: activeTab2 === index ? 'block' : 'none' }}
+                  >
+                    <img
+                      src={tab.image}
+                      srcSet={`
+                        ${tab.image.replace('.avif', '-p-500.avif')} 500w,
+                        ${tab.image.replace('.avif', '-p-800.avif')} 800w,
+                        ${tab.image.replace('.avif', '-p-1080.avif')} 1080w,
+                        ${tab.image.replace('.avif', '-p-1600.avif')} 1600w,
+                        ${tab.image.replace('.avif', '-p-2000.avif')} 2000w,
+                        ${tab.image} 3648w
+                      `}
+                      sizes="(max-width: 3648px) 100vw, 3648px"
+                      alt=""
+                      className="tab-panel-bg"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+
+              <div className="tabs-list-horizon">
+                {supplierOutreachTabs.map((tab, index) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab2(index)}
+                    className={`tab-button-${index + 8} ${activeTab2 === index ? 'active' : ''}`}
+                  >
+                    <div className={`div-block-${2805 + index}`}></div>
+                    <div className="tab-title">{tab.title}</div>
+                    <div className={`tab-desc-${index + 8}`}>{tab.desc}</div>
+                    {tab.comingSoon && (
+                      <div className="notes-for-upcoming-2">Full release coming soon.</div>
+                    )}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile View */}
+            <div className="mobile-view">
+              <div className="div-block-2796">
+                <div className="text-block-133">Get more quotes in less time by leveraging AI-powered supplier outreach</div>
+                <div className="tabs-list-mobile">
+                  {supplierOutreachTabs.map((tab, index) => (
+                    <div key={tab.id}>
+                      <button
+                        onClick={() => setActiveTab2(index)}
+                        className={`tab-button-${index + 8} ${activeTab2 === index ? 'active' : ''}`}
+                      >
+                        <div className="tab-title">{tab.title}</div>
+                        <div className={`tab-desc-${index + 8}-${index + 8}`}>{tab.desc}</div>
+                        {tab.comingSoon && (
+                          <div className="notes-for-upcoming-2-2">Full release coming soon.</div>
+                        )}
+                      </button>
+                      <div className={`tab-panel-${index + 8}-${index + 8}`} style={{ display: activeTab2 === index ? 'block' : 'none' }}>
+                        <img
+                          src={tab.image}
+                          srcSet={`
+                            ${tab.image.replace('.avif', '-p-500.avif')} 500w,
+                            ${tab.image.replace('.avif', '-p-800.avif')} 800w,
+                            ${tab.image.replace('.avif', '-p-1080.avif')} 1080w,
+                            ${tab.image} 1920w
+                          `}
+                          sizes="(max-width: 1919px) 100vw, 1920px"
+                          alt=""
+                          className="tab-panel-bg"
+                          loading="lazy"
+                        />
+                      </div>
+                      {index < supplierOutreachTabs.length - 1 && <div className="div-block-2801"></div>}
+                    </div>
+                  ))}
+                </div>
+                <a href="/supplier-outreach" target="_blank" rel="noopener noreferrer" className="link-block-3-copy-copy w-inline-block">
+                  <div className="text-block-3">View detail</div>
+                  <div className="code-embed-924 w-embed">
+                    <ArrowIcon />
+                  </div>
+                </a>
+              </div>
             </div>
           </div>
         </div>
