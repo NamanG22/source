@@ -77,12 +77,12 @@ function Section2() {
 
   return (
     <div className="section-2">
-      <div style={{ margin: '10px' , backgroundColor: 'white', padding: '30px' }}>
+      <div style={{ margin: '10px' }}>
         <div className="div-block-2794">
           <h2 className="heading-9-copy">The First Human-Quality AI Sourcing Agent</h2>
           
           {/* Supplier Discovery Section */}
-          <div className="div-block-2795">
+          <div style={{ backgroundColor: 'white' , padding: '30px', borderRadius: '20px'}} className="div-block-2795">
             <div className="div-block-2796">
               <div className="text-block-133">Find the perfect supplier for any product with AI-powered supplier research</div>
               
@@ -192,13 +192,13 @@ function Section2() {
           </div>
 
           {/* Supplier Outreach Section */}
-          <div className="div-block-2802">
+          <div style={{ backgroundColor: 'white' , padding: '30px', borderRadius: '20px'}} className="div-block-2802">
             <div className="desktop-view">
               <div className="div-block-2803">
                 <div className="text-block-133-copy">Get more quotes in less time<br />by leveraging AI-powered supplier outreach</div>
                 <a href="/supplier-outreach" target="_blank" rel="noopener noreferrer" className="view-detail w-inline-block">
                   <div className="text-block-3">View detail</div>
-                  <div className="code-embed-924 w-embed">
+                  <div className="code-embed-924">
                     <ArrowIcon />
                   </div>
                 </a>
@@ -237,7 +237,7 @@ function Section2() {
                     onClick={() => setActiveTab2(index)}
                     className={`tab-button-${index + 8} ${activeTab2 === index ? 'active' : ''}`}
                   >
-                    <div className={`div-block-${2805 + index}`}></div>
+                    {/* <div className={`div-block-${2805 + index}`}></div> */}
                     <div className="tab-title">{tab.title}</div>
                     <div className={`tab-desc-${index + 8}`}>{tab.desc}</div>
                     {tab.comingSoon && (
