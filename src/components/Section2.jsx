@@ -78,7 +78,7 @@ function Section2() {
   return (
     <div className="section-2">
       <div className="div-block-2794">
-        <h2 className="heading-9-copy">The First Human-Quality AI Sourcing Agent</h2>
+        <h2 className="heading-9-copy">Human Thinking. AI Speed. Better Sourcing.</h2>
         
         {/* Supplier Discovery Section */}
         <div className="div-block-2795">
