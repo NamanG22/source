@@ -49,7 +49,7 @@ function Section1() {
     <div className="section-1">
       <div className="header">
         <div className="header-title">
-          <h1 className="heading-2 new-home">Source Winning Products at Scale with Source Central AI Agents</h1>
+          <h1 className="heading-2 new-home">Source Products at Scale with Source Central</h1>
           <div className="text-block-25">
             Source with confidence as AI handles supplier discovery, outreach, and research using insights from 1,200,000+ cross-verified suppliers across 100 countries.
           </div>

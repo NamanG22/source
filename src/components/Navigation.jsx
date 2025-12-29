@@ -56,7 +56,6 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
               </a>
               <ResourcesDropdown isOpen={isResourcesOpen} onClose={() => setIsResourcesOpen(false)} />
             </div>
-            <a href="/pricing" className="nav-link">Pricing</a>
           </div>
           <div className="nav-right">
             <a href="https://calendly.com/sourcentral/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="nav-text-link">Book a demo</a>
