@@ -295,7 +295,7 @@ function Section4() {
       </div>
 
       {/* Testimonials Section */}
-      <div className="div-block-2744">
+      {/* <div className="div-block-2744">
         <div className="div-block-2747 left">
           <h2 className="heading-3 country left">Trusted by Procurement Leaders</h2>
           <div className="container-5">
@@ -412,7 +412,7 @@ function Section4() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
