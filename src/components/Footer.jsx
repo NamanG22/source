@@ -23,27 +23,6 @@ function Footer() {
     </svg>
   )
 
-  const FacebookIcon = () => (
-    <svg style={{ width: '100%', height: '100%' }} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="16" height="16"></rect>
-      <path fillRule="evenodd" clipRule="evenodd" d="M9.2749 15V8.7H11.1876L11.5 5.9H9.2749V4.53623C9.2749 3.81523 9.29332 3.1 10.3008 3.1H11.3213V1.0981C11.3213 1.068 10.4447 1 9.55797 1C7.706 1 6.54638 2.16004 6.54638 4.29014V5.9H4.5V8.7H6.54638V15H9.2749Z" fill="currentColor"></path>
-    </svg>
-  )
-
-  const LinkedInIcon = () => (
-    <svg style={{ width: '100%', height: '100%' }} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="16" height="16"></rect>
-      <path fillRule="evenodd" clipRule="evenodd" d="M14.5 14.5H11.9V9.95063C11.9 8.70263 11.3495 8.00635 10.3621 8.00635C9.28765 8.00635 8.65 8.73188 8.65 9.95063V14.5H6.05V6.05H8.65V7.00024C8.65 7.00024 9.46574 5.56885 11.3039 5.56885C13.1428 5.56885 14.5 6.69097 14.5 9.01277V14.5ZM3.0873 4.69858C2.21045 4.69858 1.5 3.98232 1.5 3.09897C1.5 2.21627 2.21045 1.5 3.0873 1.5C3.9635 1.5 4.67395 2.21627 4.67395 3.09897C4.6746 3.98232 3.9635 4.69858 3.0873 4.69858ZM1.5 14.5H4.75V6.05H1.5V14.5Z" fill="currentColor"></path>
-    </svg>
-  )
-
-  const InstagramIcon = () => (
-    <svg style={{ width: '100%', height: '100%' }} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="16" height="16"></rect>
-      <path fillRule="evenodd" clipRule="evenodd" d="M10.9123 1.49995H5.08741C3.10929 1.49995 1.49995 3.10936 1.49995 5.08748V10.9124C1.49995 12.8906 3.10929 14.5 5.08741 14.5H10.9123C12.8906 14.5 14.5 12.8905 14.5 10.9124V5.08748C14.5 3.10936 12.8906 1.49995 10.9123 1.49995ZM13.3466 10.9124C13.3466 12.2546 12.2546 13.3465 10.9124 13.3465H5.08741C3.74528 13.3466 2.65338 12.2546 2.65338 10.9124V5.08748C2.65338 3.74536 3.74528 2.65338 5.08741 2.65338H10.9123C12.2545 2.65338 13.3465 3.74536 13.3465 5.08748V10.9124H13.3466ZM7.99996 4.65034C6.15286 4.65034 4.65019 6.15302 4.65019 8.00011C4.65019 9.84713 6.15286 11.3497 7.99996 11.3497C9.84705 11.3497 11.3497 9.84713 11.3497 8.00011C11.3497 6.15302 9.84705 4.65034 7.99996 4.65034ZM7.99996 10.1962C6.78894 10.1962 5.80361 9.21105 5.80361 8.00003C5.80361 6.78894 6.78886 5.80369 7.99996 5.80369C9.21105 5.80369 10.1963 6.78894 10.1963 8.00003C10.1963 9.21105 9.21097 10.1962 7.99996 10.1962ZM10.8927 3.91992C11.0497 3.76228 11.268 3.67231 11.4902 3.67231C11.7132 3.67231 11.9316 3.76228 12.0885 3.91992C12.2461 4.07678 12.3361 4.29516 12.3361 4.51816C12.3361 4.74038 12.2461 4.95877 12.0885 5.1164C11.9308 5.27327 11.7132 5.364 11.4902 5.364C11.268 5.364 11.0496 5.27327 10.8927 5.1164C10.7351 4.95877 10.6444 4.74046 10.6444 4.51816C10.6444 4.29516 10.735 4.07678 10.8927 3.91992Z" fill="currentColor"></path>
-    </svg>
-  )
-
   return (
     <footer className="footer">
       <div className="div-block-29">
@@ -53,36 +32,6 @@ function Footer() {
               <span style={{ fontSize: '1.5rem', fontWeight: 'bold', letterSpacing: '0.05em' }}>Source Central</span>
             </div>
           </div>
-          <a 
-            href="https://www.facebook.com/profile.php?id=61562078880143" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="link-block-6 w-inline-block"
-          >
-            <div className="code-embed-9 w-embed">
-              <FacebookIcon />
-            </div>
-          </a>
-          <a 
-            href="https://www.linkedin.com/company/sourcentral/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="link-block-6 w-inline-block"
-          >
-            <div className="code-embed-9 w-embed">
-              <LinkedInIcon />
-            </div>
-          </a>
-          <a 
-            href="https://www.instagram.com/sourcentral" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="link-block-6 w-inline-block"
-          >
-            <div className="code-embed-9 w-embed">
-              <InstagramIcon />
-            </div>
-          </a>
         </div>
         <div className="div-block-2697">
           <div className="text-block-81">
@@ -233,11 +182,11 @@ function Footer() {
               <a href="https://docs.google.com/forms/d/e/1FAIpQLScIQqZhgscEgCDsnn6-eIVzqq4vvIzuluXOUexwtJJgvwHclQ/viewform?usp=header" className="link-block-102 w-inline-block">
                 <div className="text-block-28">Join as supplier</div>
               </a>
-              <a href="tel:+1(855)-691-2549" className="link-block-102 w-inline-block">
-                <div className="text-block-28">+1(855)-691-2549</div>
+              <a href="tel:+919311139914" className="link-block-102 w-inline-block">
+                <div className="text-block-28">+91 9311139914</div>
               </a>
-              <a href="mailto:support@sourcentral.com" className="link-block-102 w-inline-block">
-                <div className="text-block-28">support@sourcentral.com</div>
+              <a href="mailto:naveenkumarofficial026@gmail.com" className="link-block-102 w-inline-block">
+                <div className="text-block-28">naveenkumarofficial026@gmail.com</div>
               </a>
             </div>
           </div>
@@ -391,11 +340,11 @@ function Footer() {
             className="footer_contect_content"
             style={{ display: openSections.contact ? 'flex' : 'none' }}
           >
-            <a href="tel:+1(855)-691-2549" className="link-block-102 w-inline-block">
-              <div className="text-block-28">+1(855)-691-2549</div>
+            <a href="tel:+919311139914" className="link-block-102 w-inline-block">
+              <div className="text-block-28">+91 9311139914</div>
             </a>
-            <a href="mailto:support@sourcentral.com" className="link-block-102 w-inline-block">
-              <div className="text-block-28">support@sourcentral.com</div>
+            <a href="mailto:naveenkumarofficial026@gmail.com" className="link-block-102 w-inline-block">
+              <div className="text-block-28">naveenkumarofficial026@gmail.com</div>
             </a>
           </div>
         </div>
