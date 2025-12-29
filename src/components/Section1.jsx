@@ -80,8 +80,9 @@ function Section1() {
               >
                 <div className="code-embed-920 w-embed">
                   {tab.icon}
+                  <p>{tab.name}</p>
                 </div>
-                <div className="text-block-132">{tab.name}</div>
+                {/* <div className="text-block-132">{tab.name}</div> */}
               </button>
             ))}
           </div>
