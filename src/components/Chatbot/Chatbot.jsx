@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { GoogleGenerativeAI } from '@google/generative-ai'
+import { GoogleGenAI } from '@google/genai'
 import './Chatbot.css'
 
 function Chatbot() {
@@ -12,10 +12,21 @@ function Chatbot() {
   const navigate = useNavigate()
 
   // Initialize Gemini API - Get API key from environment variable
-  // You need to set VITE_GEMINI_API_KEY in your .env file
+  // The client gets the API key from the environment variable GEMINI_API_KEY
+  // For Vite, we need to use VITE_GEMINI_API_KEY and pass it explicitly
   const apiKey = import.meta.env.VITE_GEMINI_API_KEY
-  const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null
-  const model = genAI ? genAI.getGenerativeModel({ model: 'gemini-pro' }) : null
+  
+  // Debug: Check if API key is loaded (remove in production)
+  useEffect(() => {
+    if (!apiKey) {
+      console.warn('VITE_GEMINI_API_KEY is not set. Please add it to your .env file.')
+    } else {
+      console.log('API key loaded:', apiKey.substring(0, 10) + '...')
+    }
+  }, [apiKey])
+  
+  // Initialize the AI client - pass API key if available
+  const ai = apiKey ? new GoogleGenAI({ apiKey }) : null
 
   // Scroll to bottom when messages change
   useEffect(() => {
@@ -33,7 +44,7 @@ function Chatbot() {
 
       const sendInitialMessage = async () => {
         try {
-          if (!model) {
+          if (!ai) {
             throw new Error('Gemini API key not configured')
           }
 
@@ -44,16 +55,33 @@ function Chatbot() {
           
           Provide a helpful, concise response focused on product sourcing and supplier discovery.`
 
-          const result = await model.generateContent(prompt)
-          const response = await result.response
-          const text = response.text()
+          const response = await ai.models.generateContent({
+            model: 'gemini-2.5-flash',
+            contents: prompt,
+          })
+          
+          const text = response.text
 
           setMessages(prev => [...prev, { role: 'assistant', content: text }])
         } catch (error) {
           console.error('Error calling Gemini API:', error)
+          let errorMessage = 'Sorry, I encountered an error.'
+          
+          if (!apiKey) {
+            errorMessage = 'API key not found. Please add VITE_GEMINI_API_KEY to your .env file and restart the dev server.'
+          } else if (error.message?.includes('404') || error.message?.includes('not found')) {
+            errorMessage = 'Model not found (404). The API key might be invalid or the model name is incorrect. Please check your Google Cloud Console.'
+          } else if (error.message?.includes('403') || error.message?.includes('permission')) {
+            errorMessage = 'Permission denied. Please check that your API key has access to the Gemini API.'
+          } else if (error.message?.includes('401') || error.message?.includes('unauthorized')) {
+            errorMessage = 'Unauthorized. Please check that your API key is correct.'
+          } else {
+            errorMessage = `Error: ${error.message || 'Unknown error occurred'}. Please check the console for details.`
+          }
+          
           setMessages(prev => [...prev, { 
             role: 'assistant', 
-            content: 'Sorry, I encountered an error. Please make sure your Gemini API key is configured correctly in the .env file as VITE_GEMINI_API_KEY.' 
+            content: errorMessage 
           }])
         } finally {
           setIsLoading(false)
@@ -62,7 +90,7 @@ function Chatbot() {
 
       sendInitialMessage()
     }
-  }, [location.state, model])
+  }, [location.state, ai])
 
   const handleSend = async (query = null) => {
     const userMessage = query || inputValue.trim()
@@ -75,7 +103,7 @@ function Chatbot() {
     setIsLoading(true)
 
     try {
-      if (!model) {
+      if (!ai) {
         throw new Error('Gemini API key not configured')
       }
 
@@ -87,17 +115,34 @@ function Chatbot() {
       
       Provide a helpful, concise response focused on product sourcing and supplier discovery.`
 
-      const result = await model.generateContent(prompt)
-      const response = await result.response
-      const text = response.text()
+      const response = await ai.models.generateContent({
+        model: 'gemini-2.5-flash',
+        contents: prompt,
+      })
+      
+      const text = response.text
 
       // Add AI response
       setMessages(prev => [...prev, { role: 'assistant', content: text }])
     } catch (error) {
       console.error('Error calling Gemini API:', error)
+      let errorMessage = 'Sorry, I encountered an error.'
+      
+      if (!apiKey) {
+        errorMessage = 'API key not found. Please add VITE_GEMINI_API_KEY to your .env file and restart the dev server.'
+      } else if (error.message?.includes('404') || error.message?.includes('not found')) {
+        errorMessage = 'Model not found (404). The API key might be invalid or the model name is incorrect. Please check your Google Cloud Console.'
+      } else if (error.message?.includes('403') || error.message?.includes('permission')) {
+        errorMessage = 'Permission denied. Please check that your API key has access to the Gemini API.'
+      } else if (error.message?.includes('401') || error.message?.includes('unauthorized')) {
+        errorMessage = 'Unauthorized. Please check that your API key is correct.'
+      } else {
+        errorMessage = `Error: ${error.message || 'Unknown error occurred'}. Please check the console for details.`
+      }
+      
       setMessages(prev => [...prev, { 
         role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please make sure your Gemini API key is configured correctly in the .env file as VITE_GEMINI_API_KEY.' 
+        content: errorMessage 
       }])
     } finally {
       setIsLoading(false)
