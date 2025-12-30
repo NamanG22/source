@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import PlatformDropdown from './PlatformDropdown'
-import SolutionsDropdown from './SolutionsDropdown'
-import ResourcesDropdown from './ResourcesDropdown'
+import PlatformDropdown from '../PlatformDropdown/PlatformDropdown'
+import SolutionsDropdown from '../SolutionsDropdown/SolutionsDropdown'
+import ResourcesDropdown from '../ResourcesDropdown/ResourcesDropdown'
 import './Navigation.css'
 
 function Navigation({ isMenuOpen, setIsMenuOpen }) {

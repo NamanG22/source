@@ -1,14 +1,15 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import './Hero.css'
 
 function Hero() {
   const [inputValue, setInputValue] = useState('')
+  const navigate = useNavigate()
 
   const handleSend = () => {
     if (inputValue.trim()) {
-      // Handle send action
-      console.log('Sending:', inputValue)
-      setInputValue('')
+      // Navigate to chatbot page with the query
+      navigate('/chatbot', { state: { query: inputValue.trim() } })
     }
   }
 

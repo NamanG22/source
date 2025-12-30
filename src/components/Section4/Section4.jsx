@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Section4.css'
-import indiaMartIcon from '../images/IndiaMART Icon.png'
+import indiaMartIcon from '../../images/IndiaMART.png'
 
 function Section4() {
   const [currentSlide, setCurrentSlide] = useState(0)
