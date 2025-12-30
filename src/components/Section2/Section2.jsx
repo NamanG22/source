@@ -157,7 +157,7 @@ function Section2() {
                 ))}
               </div>
 
-              <a href="/supplier-discovery" target="_blank" rel="noopener noreferrer" className="link-block-3-copy-copy" style={{ width: 'fit-content' }}>
+              <a href="/supplier-discovery" className="link-block-3-copy-copy" style={{ width: 'fit-content' }}>
                 <div className="text-block-3">View detail</div>
                 <div className="code-embed-924">
                   <ArrowIcon />

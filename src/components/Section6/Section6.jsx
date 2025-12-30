@@ -20,16 +20,6 @@ function Section6() {
         >
           <div className="text-block-3">Sign up for free</div>
         </a>
-        <div className="div-block-58-copy-2">
-          <img 
-            src="https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c819cfadc81a16dd3a2_footer_01.avif" 
-            loading="lazy" 
-            sizes="(max-width: 3840px) 100vw, 3840px" 
-            srcSet="https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c819cfadc81a16dd3a2_footer_01-p-500.avif 500w, https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c819cfadc81a16dd3a2_footer_01-p-800.png 800w, https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c819cfadc81a16dd3a2_footer_01-p-1080.png 1080w, https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c819cfadc81a16dd3a2_footer_01-p-1600.png 1600w, https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/66972c819cfadc81a16dd3a2_footer_01.avif 3840w" 
-            alt="" 
-            className="image-4"
-          />
-        </div>
       </div>
     </div>
   )
