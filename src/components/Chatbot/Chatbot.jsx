@@ -8,6 +8,7 @@ function Chatbot() {
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef(null)
+  const hasProcessedInitialQuery = useRef(false)
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -35,7 +36,9 @@ function Chatbot() {
 
   // Get initial query from location state
   useEffect(() => {
-    if (location.state?.query && messages.length === 0) {
+    // Prevent duplicate calls - only process initial query once
+    if (location.state?.query && messages.length === 0 && !hasProcessedInitialQuery.current && ai) {
+      hasProcessedInitialQuery.current = true
       const initialQuery = location.state.query
       // Add user message
       const newUserMessage = { role: 'user', content: initialQuery }
@@ -44,10 +47,6 @@ function Chatbot() {
 
       const sendInitialMessage = async () => {
         try {
-          if (!ai) {
-            throw new Error('Gemini API key not configured')
-          }
-
           const prompt = `You are a helpful AI assistant for Source Central, a platform for product sourcing and supplier discovery. 
           Help users with questions about product sourcing, finding suppliers, manufacturing, and global supply chain.
           
@@ -90,7 +89,7 @@ function Chatbot() {
 
       sendInitialMessage()
     }
-  }, [location.state, ai])
+  }, [location.state, ai, messages.length, apiKey])
 
   const handleSend = async (query = null) => {
     const userMessage = query || inputValue.trim()
