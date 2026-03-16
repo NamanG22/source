@@ -7,6 +7,8 @@ import Section1 from '../Section1/Section1'
 import Section2 from '../Section2/Section2'
 import Section3 from '../Section3/Section3'
 import Section4 from '../Section4/Section4'
+import IndiaVsHubs from '../IndiaVsHubs/IndiaVsHubs'
+import WhySourceCentral from '../WhySourceCentral/WhySourceCentral'
 import Section6 from '../Section6/Section6'
 import Footer from '../Footer/Footer'
 
@@ -27,6 +29,8 @@ function Home() {
       <Section2 />
       <Section3 />
       <Section4 />
+      <IndiaVsHubs />
+      <WhySourceCentral />
       <Section6 />
       <Footer />
     </div>

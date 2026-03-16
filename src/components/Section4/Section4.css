@@ -2,7 +2,7 @@
 .section-4 {
   width: 100%;
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background: var(--color-bg-elevated);
   display: block;
   min-height: 200px;
   position: relative;

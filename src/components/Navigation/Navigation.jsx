@@ -59,8 +59,8 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
           </div>
           <div className="nav-right">
             <a href="https://calendly.com/sourcentral/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="nav-text-link">Book a demo</a>
-            <a href="https://app.sourcentral.com/api/auth/login" className="nav-text-link">Log in</a>
-            <a href="https://app.sourcentral.com/api/auth/login?screen_hint=signup" className="nav-button">Sign up</a>
+            <a href="/auth" className="nav-text-link">Log in</a>
+            <a href="/auth" className="nav-button">Sign up</a>
             <div className="mobile-menu-toggle">
               <button 
                 className="menu-button"

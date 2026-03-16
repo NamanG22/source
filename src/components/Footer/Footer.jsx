@@ -37,16 +37,8 @@ function Footer() {
           <div className="text-block-81">
             Bringing you the latest insights on global supply chain trends to help you navigate product sourcing with confidence.
           </div>
-          <div className="code-embed-15 w-embed w-iframe">
-            <iframe 
-              src="https://embeds.beehiiv.com/e21b6d03-4ffd-499e-8bf7-d7e9660ee84f?slim=true" 
-              data-test-id="beehiiv-embed" 
-              height="52" 
-              frameBorder="0" 
-              scrolling="no" 
-              style={{ margin: '0px', borderRadius: '0px !important', backgroundColor: 'transparent' }}
-              title="Newsletter subscription"
-            ></iframe>
+          <div className="footer-newsletter-coming-soon text-block-81">
+            Newsletter coming soon.
           </div>
         </div>
         <div className="div-block-63">
@@ -348,7 +340,6 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="divider"></div>
         <div className="div-block-33">
           <div className="text-block-11">Copyright ©&nbsp;2025&nbsp;Source Central</div>
           <a href="/privacy-policy" className="link-block-7 w-inline-block">

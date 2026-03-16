@@ -2,6 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './components/Home/Home'
 import Chatbot from './components/Chatbot/Chatbot'
 import SupplierDiscovery from './components/SupplierDiscovery/SupplierDiscovery'
+import AuthPage from './pages/AuthPage'
+import ProductPediaPage from './pages/ProductPediaPage'
+import CountryPage from './pages/CountryPage'
+import BlogPage from './pages/BlogPage'
+import CompetitorPage from './pages/CompetitorPage'
 import './App.css'
 
 function App() {
@@ -9,6 +14,11 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route path="/productpedia" element={<ProductPediaPage />} />
+        <Route path="/country/:countryId" element={<CountryPage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/competitor/competitor-alibaba" element={<CompetitorPage />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/supplier-discovery" element={<SupplierDiscovery />} />
       </Routes>
@@ -17,4 +27,3 @@ function App() {
 }
 
 export default App
-

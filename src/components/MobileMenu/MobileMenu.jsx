@@ -307,9 +307,9 @@ function MobileMenu({ isOpen, onClose }) {
         <div className="menu-divider"></div>
         <a href="https://airtable.com/appYe8ucpUyLBWajT/pagcX2GvDezFe6Xev/form?prefill_ID=" target="_blank" rel="noopener noreferrer" className="menu-link" onClick={handleClose}>Join as supplier</a>
         <div className="menu-divider"></div>
-        <a href="https://login.sourcentral.com/u/login?state=hKFo2SBqSHE1VC1oai1VUkQ3T3VCMjlLRFJuOUVPV3lJR2RSQaFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEpscnlyM1NJLTE2b21RTDZvc3hmNjgxU2o3VnpvUXUzo2NpZNkgWnQ5b3VnRllYZzR1UkdMM2x0NVhKck1DU0Q3aEZmR1Y" target="_blank" rel="noopener noreferrer" className="menu-link" onClick={handleClose}>Log in</a>
+        <a href="/auth" className="menu-link" onClick={handleClose}>Log in</a>
         <div className="menu-divider"></div>
-        <a href="https://app.sourcentral.com/api/auth/login?screen_hint=signup" target="_blank" rel="noopener noreferrer" className="menu-button-primary" onClick={handleClose}>Sign up for free</a>
+        <a href="/auth" className="menu-button-primary" onClick={handleClose}>Sign up for free</a>
       </div>
     </div>
   )

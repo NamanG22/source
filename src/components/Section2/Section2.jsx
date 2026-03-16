@@ -80,7 +80,11 @@ function Section2() {
       <div style={{ margin: '10px' }}>
         <div className="div-block-2794">
           <h2 className="heading-9-copy">The First Human-Quality AI Sourcing Agent</h2>
-          
+          <div className="section-2-feature-strip">
+            {/* <span className="section-2-feature-pill">AI-powered RFQ & quote comparison</span> */}
+            {/* <span className="section-2-feature-pill">Track all chats across platforms</span> */}
+          </div>
+
           {/* Supplier Discovery Section */}
           <div style={{ backgroundColor: 'white' , padding: '30px', borderRadius: '20px'}} className="div-block-2795">
             <div className="div-block-2796">

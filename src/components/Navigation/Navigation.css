@@ -2,8 +2,9 @@
 .nav-bar {
   width: 100%;
   padding: 1rem 2rem;
-  /* background-color: #ffffff; */
-  /* border-bottom: 1px solid #e5e7eb; */
+  background: rgba(253, 251, 247, 0.92);
+  backdrop-filter: saturate(180%) blur(8px);
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -33,7 +34,7 @@
 .logo-text {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--color-text);
   letter-spacing: -0.02em;
 }
 
@@ -46,7 +47,7 @@
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
-  color: #374151;
+  color: var(--color-text-muted);
   font-size: 0.9375rem;
   font-weight: 500;
   padding: 0.5rem 0;
@@ -54,7 +55,7 @@
 }
 
 .nav-link:hover {
-  color: #111827;
+  color: var(--color-text);
 }
 
 .dropdown-icon {
@@ -71,7 +72,7 @@
 
 .nav-text-link {
   text-decoration: none;
-  color: #374151;
+  color: var(--color-text-muted);
   font-size: 0.9375rem;
   font-weight: 500;
   padding: 0.5rem 0;
@@ -79,22 +80,22 @@
 }
 
 .nav-text-link:hover {
-  color: #111827;
+  color: var(--color-text);
 }
 
 .nav-button {
-  background-color: #111827;
-  color: #ffffff;
+  background-color: var(--color-accent);
+  color: #fff;
   padding: 0.625rem 1.25rem;
   border-radius: 0.5rem;
   text-decoration: none;
   font-size: 0.9375rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: background-color 0.2s ease;
 }
 
 .nav-button:hover {
-  background-color: #1f2937;
+  background-color: var(--color-accent-hover);
 }
 
 .mobile-menu-toggle {

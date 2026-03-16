@@ -1,30 +1,28 @@
-/* Hero Section Styles */
 .hero-section {
   position: relative;
   width: 100%;
-  min-height: 600px;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem 4rem;
   overflow: hidden;
 }
 
 .hero-background-image {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  opacity: 0.1;
+  opacity: 0.06;
 }
 
 .hero-content {
   position: relative;
   z-index: 1;
-  max-width: 900px;
+  max-width: 720px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -36,189 +34,138 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
   text-align: center;
 }
 
 .hero-logo {
-  width: 100%;
-  max-width: 600px;
-  height: auto;
-  color: #111827;
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
 }
 
-.hero-logo svg {
-  width: 100%;
-  height: auto;
+.hero-headline {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-text);
+  max-width: 560px;
+}
+
+.hero-rotating {
+  display: inline-block;
+  color: var(--color-accent);
+  min-width: 1ch;
+  animation: fadeWord 0.4s ease;
+}
+
+@keyframes fadeWord {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .hero-tagline {
-  font-size: 1.5rem;
+  font-size: 1.0625rem;
   font-weight: 500;
-  color: #374151;
-  line-height: 1.6;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  max-width: 480px;
+}
+
+/* ProductPedia block */
+.hero-productpedia {
+  width: 100%;
   max-width: 600px;
 }
 
-.hero-chat-input {
-  width: 100%;
-  max-width: 800px;
+.productpedia-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
 }
 
-.chat-input-container {
-  width: 100%;
-}
-
-.chat-input-wrapper {
+.productpedia-input-wrapper {
   display: flex;
-  align-items: flex-end;
-  gap: 0.75rem;
-  background-color: #ffffff;
-  border: 2px solid #e5e7eb;
-  border-radius: 1rem;
-  padding: 1rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  align-items: stretch;
+  gap: 0;
+  background: var(--color-bg-elevated);
+  border: 2px solid var(--color-border);
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+  box-shadow: 0 2px 8px rgba(45, 42, 38, 0.06);
+  transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.chat-input-wrapper:focus-within {
-  border-color: #111827;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+.productpedia-input-wrapper:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-soft);
 }
 
-.chat-textarea {
+.productpedia-input {
   flex: 1;
   border: none;
   outline: none;
-  resize: none;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
   font-family: inherit;
-  color: #111827;
+  color: var(--color-text);
   background: transparent;
-  min-height: 50px;
-  max-height: 200px;
-  line-height: 1.5;
 }
 
-.chat-textarea::placeholder {
-  color: #9ca3af;
+.productpedia-input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.8;
 }
 
-.chat-send-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: #111827;
-  color: #ffffff;
+.productpedia-button {
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: white;
+  background: var(--color-accent);
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  flex-shrink: 0;
+  transition: background 0.2s;
 }
 
-.chat-send-button:hover:not(:disabled) {
-  background-color: #1f2937;
-  transform: scale(1.05);
+.productpedia-button:hover {
+  background: var(--color-accent-hover);
 }
 
-.chat-send-button:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.chat-suggestions {
+.hero-suggestions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-top: 1rem;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
   justify-content: center;
 }
 
 .suggestion-chip {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.625rem 1rem;
-  background-color: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 2rem;
-  font-size: 0.875rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 500;
-  color: #374151;
+  color: var(--color-text-muted);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 2rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
 }
 
 .suggestion-chip:hover {
-  background-color: #f9fafb;
-  border-color: #d1d5db;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.suggestion-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
-}
-
-.suggestion-icon svg {
-  width: 100%;
-  height: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-section {
-    min-height: 500px;
-    padding: 3rem 1.5rem;
-  }
-
-  .hero-tagline {
-    font-size: 1.25rem;
-  }
-
-  .hero-logo {
-    max-width: 100%;
-  }
-
-  .chat-suggestions {
-    gap: 0.5rem;
-  }
-
-  .suggestion-chip {
-    font-size: 0.8125rem;
-    padding: 0.5rem 0.875rem;
-  }
+  color: var(--color-accent);
+  border-color: var(--color-accent-soft);
+  background: var(--color-accent-soft);
 }
 
 @media (max-width: 640px) {
-  .hero-section {
-    padding: 2rem 1rem;
-  }
-
-  .hero-tagline {
-    font-size: 1.125rem;
-  }
-
-  .chat-input-wrapper {
-    padding: 0.75rem;
-  }
-
-  .chat-suggestions {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .suggestion-chip {
-    justify-content: center;
-  }
+  .hero-section { min-height: 480px; padding: 2rem 1rem 3rem; }
+  .hero-headline { font-size: 1.5rem; }
+  .productpedia-input-wrapper { flex-direction: column; }
+  .productpedia-button { width: 100%; }
 }
-
-

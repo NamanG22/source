@@ -2,7 +2,7 @@
 .section-6 {
   width: 100%;
   padding: 4rem 2rem;
-  background-color: #ffffff;
+  background: var(--color-bg);
 }
 
 .div-block-28-copy111 {
@@ -45,10 +45,10 @@
 }
 
 .heading-5-copy-111 {
-  font-size: 2.5rem;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
   font-weight: 700;
   line-height: 1.2;
-  color: #111827;
+  color: var(--color-text);
   margin: 0;
 }
 
@@ -57,32 +57,32 @@
 }
 
 .text-block-147 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   line-height: 1.6;
-  color: #6b7280;
+  color: var(--color-text-muted);
   margin: 0;
 }
 
 .link-block-3-copy {
   display: inline-block;
   padding: 0.875rem 2rem;
-  background-color: #111827;
-  color: #ffffff;
+  background-color: var(--color-accent);
+  color: #fff;
   text-decoration: none;
   border-radius: 0.5rem;
-  font-weight: 500;
+  font-weight: 600;
   transition: background-color 0.2s ease, transform 0.2s ease;
   position: relative;
   z-index: 1;
 }
 
 .link-block-3-copy:hover {
-  background-color: #1f2937;
+  background-color: var(--color-accent-hover);
   transform: translateY(-2px);
 }
 
 .link-block-3-copy .text-block-3 {
-  color: #ffffff;
+  color: #fff;
   font-size: 1rem;
 }
 

@@ -4,14 +4,30 @@
   box-sizing: border-box;
 }
 
+/* Warm design system — soft, approachable */
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'DM Sans', Inter, system-ui, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
-  color: #111827;
-  background-color: #ffffff;
+  /* Warm neutrals */
+  --color-text: #2d2a26;
+  --color-text-muted: #5c564c;
+  --color-bg: #fdfbf7;
+  --color-bg-elevated: #ffffff;
+  --color-border: #e8e4dc;
 
+  /* Warm accent (soft amber/terracotta) */
+  --color-accent: #c45c26;
+  --color-accent-soft: #f5e6dc;
+  --color-accent-hover: #a84a1a;
+
+  /* Secondary warm (soft teal for balance) */
+  --color-secondary: #0d7a6c;
+  --color-secondary-soft: #e0f0ee;
+
+  color: var(--color-text);
+  background-color: var(--color-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
