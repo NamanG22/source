@@ -1,8 +1,16 @@
 import { useState } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
+import { supabase } from '../../lib/supabaseClient'
 import './MobileMenu.css'
 
 function MobileMenu({ isOpen, onClose }) {
+  const { user } = useAuth()
   const [openDropdown, setOpenDropdown] = useState(null)
+
+  const handleLogout = async () => {
+    if (supabase) await supabase.auth.signOut()
+    handleClose()
+  }
 
   if (!isOpen) return null
 
@@ -306,10 +314,20 @@ function MobileMenu({ isOpen, onClose }) {
         <a href="/pricing" className="menu-link" onClick={handleClose}>Pricing</a>
         <div className="menu-divider"></div>
         <a href="https://airtable.com/appYe8ucpUyLBWajT/pagcX2GvDezFe6Xev/form?prefill_ID=" target="_blank" rel="noopener noreferrer" className="menu-link" onClick={handleClose}>Join as supplier</a>
-        <div className="menu-divider"></div>
-        <a href="/auth" className="menu-link" onClick={handleClose}>Log in</a>
-        <div className="menu-divider"></div>
-        <a href="/auth" className="menu-button-primary" onClick={handleClose}>Sign up for free</a>
+        {user ? (
+          <>
+            <div className="menu-divider"></div>
+            <div className="menu-user-email">{user.email}</div>
+            <button type="button" className="menu-logout" onClick={handleLogout}>Log out</button>
+          </>
+        ) : (
+          <>
+            <div className="menu-divider"></div>
+            <a href="/auth?mode=login" className="menu-link" onClick={handleClose}>Log in</a>
+            <div className="menu-divider"></div>
+            <a href="/auth?mode=signup" className="menu-button-primary" onClick={handleClose}>Sign up for free</a>
+          </>
+        )}
       </div>
     </div>
   )

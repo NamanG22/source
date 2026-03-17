@@ -1,13 +1,31 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
+import { supabase } from '../../lib/supabaseClient'
 import PlatformDropdown from '../PlatformDropdown/PlatformDropdown'
 import SolutionsDropdown from '../SolutionsDropdown/SolutionsDropdown'
 import ResourcesDropdown from '../ResourcesDropdown/ResourcesDropdown'
 import './Navigation.css'
 
 function Navigation({ isMenuOpen, setIsMenuOpen }) {
+  const { user } = useAuth()
   const [isPlatformOpen, setIsPlatformOpen] = useState(false)
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
+  const [isProfileOpen, setIsProfileOpen] = useState(false)
+  const profileRef = useRef(null)
+
+  useEffect(() => {
+    function handleClickOutside(e) {
+      if (profileRef.current && !profileRef.current.contains(e.target)) setIsProfileOpen(false)
+    }
+    document.addEventListener('click', handleClickOutside)
+    return () => document.removeEventListener('click', handleClickOutside)
+  }, [])
+
+  const handleLogout = async () => {
+    if (supabase) await supabase.auth.signOut()
+    setIsProfileOpen(false)
+  }
 
   return (
     <>
@@ -30,7 +48,7 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
               </a>
               <PlatformDropdown isOpen={isPlatformOpen} onClose={() => setIsPlatformOpen(false)} />
             </div>
-            <div 
+            {/* <div 
               className="nav-link-wrapper"
               onMouseEnter={() => setIsSolutionsOpen(true)}
               onMouseLeave={() => setIsSolutionsOpen(false)}
@@ -42,7 +60,7 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
                 </svg>
               </a>
               <SolutionsDropdown isOpen={isSolutionsOpen} onClose={() => setIsSolutionsOpen(false)} />
-            </div>
+            </div> */}
             <div 
               className="nav-link-wrapper"
               onMouseEnter={() => setIsResourcesOpen(true)}
@@ -58,9 +76,37 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
             </div>
           </div>
           <div className="nav-right">
-            <a href="https://calendly.com/sourcentral/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="nav-text-link">Book a demo</a>
-            <a href="/auth" className="nav-text-link">Log in</a>
-            <a href="/auth" className="nav-button">Sign up</a>
+            {/* <a href="https://calendly.com/sourcentral/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="nav-text-link">Book a demo</a> */}
+            {!user ? (
+              <>
+                <a href="/auth?mode=login" className="nav-text-link">Log in</a>
+                <a href="/auth?mode=signup" className="nav-button">Sign up</a>
+              </>
+            ) : (
+              <div className="nav-profile-wrapper" ref={profileRef}>
+                <button
+                  type="button"
+                  className="nav-profile-trigger"
+                  onClick={(e) => { e.stopPropagation(); setIsProfileOpen(!isProfileOpen) }}
+                  aria-label="Profile menu"
+                  aria-expanded={isProfileOpen}
+                >
+                  <svg className="nav-profile-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 14a3 3 0 0 0 3-3 3 3 0 0 0-6 0 3 3 0 0 0 3 3Z" />
+                    <path d="M8 19c.7-1.2 2.1-2 3.5-2s2.8.8 3.5 2" />
+                  </svg>
+                </button>
+                {isProfileOpen && (
+                  <div className="nav-profile-dropdown">
+                    <div className="nav-profile-email">{user.email}</div>
+                    <button type="button" className="nav-profile-logout" onClick={handleLogout}>
+                      Log out
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
             <div className="mobile-menu-toggle">
               <button 
                 className="menu-button"

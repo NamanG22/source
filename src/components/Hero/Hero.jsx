@@ -12,7 +12,7 @@ function Hero() {
   useEffect(() => {
     const t = setInterval(() => {
       setWordIndex((i) => (i + 1) % ROTATING_WORDS.length)
-    }, 2500)
+    }, 2000)
     return () => clearInterval(t)
   }, [])
 
@@ -38,7 +38,7 @@ function Hero() {
             </span>
           </h1>
           <div className="hero-tagline">
-            Intelligence-led B2B sourcing — discover, verify, and connect with verified manufacturers.
+            Intelligence-led B2B sourcing - discover, verify, and connect with verified manufacturers.
           </div>
         </div>
 

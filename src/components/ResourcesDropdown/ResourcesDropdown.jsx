@@ -27,7 +27,7 @@ function ResourcesDropdown({ isOpen, onClose }) {
                 <div className="resources-item-desc">Learn more about our mission and team</div>
               </div>
             </a>
-            <a href="/career" className="resources-item">
+            {/* <a href="/career" className="resources-item">
               <div className="resources-item-text">
                 <div className="resources-item-title">Career</div>
                 <div className="resources-item-desc">Join us in AI-driven product sourcing</div>
@@ -38,7 +38,7 @@ function ResourcesDropdown({ isOpen, onClose }) {
                 <div className="resources-item-title">Help</div>
                 <div className="resources-item-desc">Find help and answers to common questions</div>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
         <div className="resources-category">

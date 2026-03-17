@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { AuthProvider } from './contexts/AuthContext'
 import Home from './components/Home/Home'
 import Chatbot from './components/Chatbot/Chatbot'
 import SupplierDiscovery from './components/SupplierDiscovery/SupplierDiscovery'
@@ -11,8 +12,9 @@ import './App.css'
 
 function App() {
   return (
-    <Router>
-      <Routes>
+    <AuthProvider>
+      <Router>
+        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/productpedia" element={<ProductPediaPage />} />
@@ -21,8 +23,9 @@ function App() {
         <Route path="/competitor/competitor-alibaba" element={<CompetitorPage />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/supplier-discovery" element={<SupplierDiscovery />} />
-      </Routes>
-    </Router>
+        </Routes>
+      </Router>
+    </AuthProvider>
   )
 }
 
