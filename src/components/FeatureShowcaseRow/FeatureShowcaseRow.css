@@ -1,0 +1,99 @@
+.feature-showcase-row {
+  width: 100%;
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(229, 231, 235, 0.9);
+}
+
+.feature-showcase-row__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 440px);
+  gap: 2.5rem 3rem;
+  /* Demo slot has fixed min-height + fixed message area so row height stays stable */
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-showcase-row__copy {
+  text-align: left;
+}
+
+.feature-showcase-row__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #0f3d39;
+  margin: 0 0 0.75rem 0;
+}
+
+.feature-showcase-row__title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #111827;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.02em;
+}
+
+.feature-showcase-row__desc {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: #6b7280;
+  margin: 0;
+  max-width: 36rem;
+}
+
+.feature-showcase-row__visual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  /* Reserve slot so column width/height don’t jump when the demo fills in */
+  min-height: 32rem;
+  min-width: 0;
+}
+
+.feature-showcase-row--compact-visual .feature-showcase-row__visual {
+  min-height: auto;
+}
+
+.feature-showcase-row--visual-left .feature-showcase-row__inner {
+  grid-template-columns: minmax(280px, 440px) minmax(0, 1fr);
+}
+
+.feature-showcase-row--visual-left .feature-showcase-row__visual {
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .feature-showcase-row__inner,
+  .feature-showcase-row--visual-left .feature-showcase-row__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .feature-showcase-row__visual,
+  .feature-showcase-row--compact-visual .feature-showcase-row__visual {
+    min-height: auto;
+  }
+
+  .feature-showcase-row--visual-right .feature-showcase-row__visual {
+    order: -1;
+  }
+
+  .feature-showcase-row--visual-left .feature-showcase-row__visual {
+    order: -1;
+  }
+
+  .feature-showcase-row__copy {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .feature-showcase-row__desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

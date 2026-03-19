@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import FeatureShowcaseRow from '../FeatureShowcaseRow/FeatureShowcaseRow'
+import HeroIntelligenceDemo from '../HeroIntelligenceDemo/HeroIntelligenceDemo'
+import IntelligenceFeatureCards from '../IntelligenceFeatureCards/IntelligenceFeatureCards'
 import './Section1.css'
 
 function Section1() {
@@ -71,6 +74,19 @@ function Section1() {
             </a>
           </div>
         </div>
+
+        <FeatureShowcaseRow
+          visualSide="right"
+          headingId="feature-showcase-intelligence"
+          eyebrow="Live intelligence"
+          title="Ask once—get suppliers, duties, and negotiation context"
+          description="Source Central turns natural language into verified matches, tariff routes, and actionable briefs so your team spends less time tab-hopping and more time closing with the right factories."
+        >
+          <HeroIntelligenceDemo />
+        </FeatureShowcaseRow>
+
+        <IntelligenceFeatureCards />
+
         <div className="tabs-2 w-tabs">
           <div className="tabs-menu-4 w-tab-menu" role="tablist">
             {tabs.map((tab, index) => (

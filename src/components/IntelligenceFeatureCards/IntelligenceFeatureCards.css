@@ -1,0 +1,232 @@
+.intel-features {
+  width: 100%;
+}
+
+.intel-features__intro {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 2rem 0 1rem;
+}
+
+.intel-features__title {
+  font-size: clamp(1.65rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem 0;
+}
+
+.intel-features__subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* Card shell when used inside FeatureShowcaseRow visual column */
+.intel-card--showcase {
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.intel-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 28px rgba(45, 42, 38, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.intel-card__panel {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.intel-card__panel--compact {
+  padding: 0.875rem 1rem;
+}
+
+.intel-card__label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.75rem 0;
+}
+
+.intel-card__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.intel-card__bar-row {
+  display: grid;
+  grid-template-columns: 4.5rem 1fr 2.25rem;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.intel-card__bar-name {
+  color: var(--color-text-muted);
+}
+
+.intel-card__bar-track {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--color-border);
+  overflow: hidden;
+}
+
+.intel-card__bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.intel-card__bar-fill--primary {
+  background: var(--color-secondary);
+}
+
+.intel-card__bar-fill--soft {
+  background: var(--color-secondary-soft);
+  box-shadow: inset 0 0 0 1px rgba(13, 122, 108, 0.25);
+}
+
+.intel-card__bar-pct {
+  text-align: right;
+  color: var(--color-text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.intel-card__mono {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 0.35rem 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.intel-card__muted-sm {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+  margin: 0 0 0.5rem 0;
+}
+
+.intel-card__duty {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin: 0;
+}
+
+.intel-card__chat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 6.5rem;
+}
+
+.intel-card__bubble {
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  padding: 0.65rem 0.85rem;
+  border-radius: 12px;
+  max-width: 95%;
+}
+
+.intel-card__bubble--user {
+  align-self: flex-end;
+  background: var(--color-secondary);
+  color: #fff;
+  border-bottom-right-radius: 4px;
+}
+
+.intel-card__bubble--ai {
+  align-self: flex-start;
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-bottom-left-radius: 4px;
+}
+
+.intel-card__price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.intel-card__price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.intel-card__delta {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+}
+
+.intel-card__impact {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.intel-card__stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.intel-card__stat {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.intel-card__stat-label {
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.intel-card__stat-value {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 640px) {
+  .intel-features__intro {
+    padding: 1.5rem 0 0.5rem;
+  }
+
+  .intel-features__subtitle {
+    font-size: 1rem;
+  }
+
+  .intel-card__stats {
+    grid-template-columns: 1fr;
+  }
+}
