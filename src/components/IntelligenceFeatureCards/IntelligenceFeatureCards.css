@@ -2,34 +2,16 @@
   width: 100%;
 }
 
-.intel-features__intro {
-  text-align: center;
-  max-width: 40rem;
-  margin: 0 auto;
-  padding: 2rem 0 1rem;
-}
-
-.intel-features__title {
-  font-size: clamp(1.65rem, 2.8vw, 2.2rem);
-  font-weight: 700;
-  line-height: 1.2;
-  color: var(--color-text);
-  letter-spacing: -0.02em;
-  margin: 0 0 0.75rem 0;
-}
-
-.intel-features__subtitle {
-  font-size: 1.0625rem;
-  line-height: 1.6;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
 /* Card shell when used inside FeatureShowcaseRow visual column */
 .intel-card--showcase {
   width: 100%;
-  max-width: 440px;
+  max-width: 460px;
   margin: 0 auto;
+}
+
+.intel-card--tall {
+  min-height: min(52vh, 28rem);
+  justify-content: flex-start;
 }
 
 .intel-card {
@@ -53,6 +35,188 @@
 
 .intel-card__panel--compact {
   padding: 0.875rem 1rem;
+}
+
+.intel-card__panel--tight {
+  padding: 0.75rem 0.875rem;
+}
+
+.intel-card__panel-head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.intel-card__panel-head .intel-card__label {
+  margin: 0;
+}
+
+.intel-card__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.intel-card__pill {
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.45rem;
+  border-radius: 4px;
+  background: var(--color-accent-soft);
+  color: var(--color-text-muted);
+}
+
+.intel-card__pill--accent {
+  background: var(--color-secondary-soft);
+  color: var(--color-secondary);
+}
+
+.intel-card__checklist {
+  margin: 0.75rem 0 0 0;
+  padding-left: 1.1rem;
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.intel-card__subhead {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin: 0 0 0.5rem 0;
+}
+
+.intel-card__mini-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.6875rem;
+}
+
+.intel-card__mini-table td {
+  padding: 0.35rem 0;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.intel-card__mini-table tr:last-child td {
+  border-bottom: none;
+}
+
+.intel-card__mini-table-num {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.intel-card__mini-table--flush td {
+  padding: 0.3rem 0;
+}
+
+.intel-card__delta-inline {
+  text-align: right;
+  font-weight: 600;
+  font-size: 0.625rem;
+  color: var(--color-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.intel-card__foot-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: auto;
+  border-top: 1px dashed var(--color-border);
+  padding-top: 0.75rem;
+}
+
+.intel-card__foot-item {
+  font-size: 0.625rem;
+  color: var(--color-text-muted);
+}
+
+.intel-card__thread-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.65rem;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  margin: -0.25rem 0 0.25rem 0;
+}
+
+.intel-card__thread-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-secondary);
+  flex-shrink: 0;
+}
+
+.intel-card__thread-title {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.3;
+}
+
+.intel-card__chat--tall {
+  min-height: 11rem;
+  gap: 0.55rem;
+}
+
+.intel-card__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.intel-card__step {
+  font-size: 0.6875rem;
+  padding: 0.35rem 0 0.35rem 0.65rem;
+  border-left: 2px solid var(--color-border);
+  color: var(--color-text-muted);
+  line-height: 1.35;
+}
+
+.intel-card__step--done {
+  border-left-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+.intel-card__step--active {
+  border-left-color: var(--color-accent);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.intel-card__spark {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3px;
+  height: 3.25rem;
+  margin: 0.65rem 0 0.5rem;
+  padding: 0 0.15rem;
+}
+
+.intel-card__spark-bar {
+  flex: 1;
+  min-width: 3px;
+  max-width: 10px;
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(180deg, var(--color-secondary), var(--color-secondary-soft));
+  opacity: 0.85;
+}
+
+.intel-card__stats--four {
+  grid-template-columns: 1fr 1fr;
 }
 
 .intel-card__label {
@@ -218,15 +382,12 @@
 }
 
 @media (max-width: 640px) {
-  .intel-features__intro {
-    padding: 1.5rem 0 0.5rem;
+  .intel-card--tall {
+    min-height: unset;
   }
 
-  .intel-features__subtitle {
-    font-size: 1rem;
-  }
-
-  .intel-card__stats {
+  .intel-card__stats,
+  .intel-card__stats--four {
     grid-template-columns: 1fr;
   }
 }

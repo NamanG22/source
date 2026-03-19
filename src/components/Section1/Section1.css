@@ -9,6 +9,8 @@
     #ffffff 100%
   );
   background-color: transparent;
+  /* Live demo + 3 intel rows — slightly shorter bands than before */
+  --section-1-feature-band: min(56vh, 44rem);
 }
 
 .header {
@@ -17,6 +19,74 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
+}
+
+/* Full-width rule sits above the Intelligence heading (not below it) */
+.section-1-intel-lead {
+  width: 100%;
+  border-top: 1px solid var(--color-border, rgba(229, 231, 235, 0.9));
+  padding-top: 2.5rem;
+}
+
+/* Intelligence section headline — above live demo */
+.section-1-intel-intro {
+  text-align: center;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* First showcase row is the live demo: no second line under the intro */
+.header > .feature-showcase-row:first-of-type {
+  border-top: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Fixed min height for the 4 feature bands (animation row + HS / negotiation / market rows) */
+.section-1 .feature-showcase-row > .feature-showcase-row__inner {
+  min-height: var(--section-1-feature-band);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1100px) {
+  .section-1 {
+    --section-1-feature-band: min(50vh, 38rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .section-1 {
+    --section-1-feature-band: min(42vh, 26rem);
+  }
+}
+
+@media (max-width: 640px) {
+  .section-1 .feature-showcase-row > .feature-showcase-row__inner {
+    min-height: unset;
+  }
+}
+
+.section-1-intel-intro__title {
+  font-size: clamp(1.65rem, 2.8vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text, #2d2a26);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem 0;
+}
+
+.section-1-intel-intro__subtitle {
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--color-text-muted, #5c564c);
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .section-1-intel-intro__subtitle {
+    font-size: 1rem;
+  }
 }
 
 .header-title {

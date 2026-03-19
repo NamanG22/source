@@ -3,9 +3,16 @@ import './IntelligenceFeatureCards.css'
 
 function IntelCardHsCode() {
   return (
-    <article className="intel-card intel-card--showcase">
+    <article className="intel-card intel-card--showcase intel-card--tall">
       <div className="intel-card__panel">
-        <p className="intel-card__label">Product: Denim jeans</p>
+        <div className="intel-card__panel-head">
+          <p className="intel-card__label">Product: Denim jeans</p>
+          <div className="intel-card__pills">
+            <span className="intel-card__pill">Woven</span>
+            <span className="intel-card__pill">Women&apos;s</span>
+            <span className="intel-card__pill intel-card__pill--accent">Review</span>
+          </div>
+        </div>
         <div className="intel-card__bars">
           <div className="intel-card__bar-row">
             <span className="intel-card__bar-name">Cotton</span>
@@ -22,12 +29,45 @@ function IntelCardHsCode() {
             <span className="intel-card__bar-pct">2%</span>
           </div>
         </div>
+        <ul className="intel-card__checklist">
+          <li>COO: India · Manufacturer declared</li>
+          <li>Knitted / crocheted: No</li>
+        </ul>
       </div>
 
       <div className="intel-card__panel intel-card__panel--compact">
         <p className="intel-card__mono">HS code: 6204.62.20</p>
         <p className="intel-card__muted-sm">Women&apos;s denim trousers, not knitted</p>
-        <p className="intel-card__duty">Base duty: 16.5% (US), 0% (UK)</p>
+        <p className="intel-card__duty">Base duty: 16.5% (US), 0% (UK under FTA)</p>
+      </div>
+
+      <div className="intel-card__panel">
+        <p className="intel-card__subhead">Landed cost preview (est.)</p>
+        <table className="intel-card__mini-table">
+          <tbody>
+            <tr>
+              <td>India → UK</td>
+              <td>0% duty</td>
+              <td className="intel-card__mini-table-num">$4.08</td>
+            </tr>
+            <tr>
+              <td>India → EU</td>
+              <td>12%</td>
+              <td className="intel-card__mini-table-num">$4.55</td>
+            </tr>
+            <tr>
+              <td>India → US</td>
+              <td>16.5%</td>
+              <td className="intel-card__mini-table-num">$4.68</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="intel-card__foot-strip">
+        <span className="intel-card__foot-item">✓ GSP checked</span>
+        <span className="intel-card__foot-item">✓ Anti-dumping scan</span>
+        <span className="intel-card__foot-item">Last sync 2h ago</span>
       </div>
     </article>
   )
@@ -35,14 +75,39 @@ function IntelCardHsCode() {
 
 function IntelCardNegotiation() {
   return (
-    <article className="intel-card intel-card--showcase">
-      <div className="intel-card__chat">
+    <article className="intel-card intel-card--showcase intel-card--tall">
+      <div className="intel-card__thread-bar">
+        <span className="intel-card__thread-dot" aria-hidden />
+        <span className="intel-card__thread-title">Denim line · 5K MOQ · Tiruppur cluster</span>
+      </div>
+
+      <div className="intel-card__chat intel-card__chat--tall">
         <div className="intel-card__bubble intel-card__bubble--user">
           Can you negotiate $8/unit for 5K units?
         </div>
         <div className="intel-card__bubble intel-card__bubble--ai">
-          Based on market data: Raw cotton +12%, floor price: $9.20/unit. Escalating for approval…
+          Based on market data: Raw cotton +12% vs last quarter. Suggested floor: $9.20/unit before margin.
         </div>
+        <div className="intel-card__bubble intel-card__bubble--user">
+          Cap at $8.50 if they commit to 4-week ship windows.
+        </div>
+        <div className="intel-card__bubble intel-card__bubble--ai">
+          Drafting counter with volume tier: $8.65 @ 5K, $8.40 @ 10K. Escalation sent to your approvers…
+        </div>
+      </div>
+
+      <div className="intel-card__panel intel-card__panel--tight">
+        <p className="intel-card__subhead">Status</p>
+        <div className="intel-card__steps">
+          <div className="intel-card__step intel-card__step--done">Market floor computed</div>
+          <div className="intel-card__step intel-card__step--done">Supplier tier matched</div>
+          <div className="intel-card__step intel-card__step--active">Awaiting approval · 2 stakeholders</div>
+        </div>
+      </div>
+
+      <div className="intel-card__foot-strip">
+        <span className="intel-card__foot-item">Tone: firm · data-backed</span>
+        <span className="intel-card__foot-item">Next nudge in 24h</span>
       </div>
     </article>
   )
@@ -50,27 +115,63 @@ function IntelCardNegotiation() {
 
 function IntelCardMarket() {
   return (
-    <article className="intel-card intel-card--showcase">
+    <article className="intel-card intel-card--showcase intel-card--tall">
       <div className="intel-card__panel">
-        <p className="intel-card__label">Cotton market (48h)</p>
+        <p className="intel-card__label">Cotton futures (ICE) · 48h</p>
         <div className="intel-card__price-row">
           <span className="intel-card__price">$92.45</span>
           <span className="intel-card__delta">+2.3%</span>
         </div>
+        <div className="intel-card__spark" aria-hidden>
+          {[40, 52, 48, 61, 55, 58, 72, 68, 75, 82, 78, 88].map((h, i) => (
+            <span key={i} className="intel-card__spark-bar" style={{ height: `${h}%` }} />
+          ))}
+        </div>
         <p className="intel-card__impact">
-          Impact on sourcing: ↑ Floor prices expect +3–5% increases
+          Impact on sourcing: ↑ Floor prices expect +3–5% on denim bottoms through Q2.
         </p>
       </div>
 
-      <div className="intel-card__stats">
+      <div className="intel-card__stats intel-card__stats--four">
         <div className="intel-card__stat">
           <span className="intel-card__stat-label">Avg lead time</span>
           <span className="intel-card__stat-value">23 days</span>
         </div>
         <div className="intel-card__stat">
           <span className="intel-card__stat-label">Supplier rating</span>
-          <span className="intel-card__stat-value">4.7 / 5.0</span>
+          <span className="intel-card__stat-value">4.7 / 5</span>
         </div>
+        <div className="intel-card__stat">
+          <span className="intel-card__stat-label">Capacity</span>
+          <span className="intel-card__stat-value">86%</span>
+        </div>
+        <div className="intel-card__stat">
+          <span className="intel-card__stat-label">On-time ship</span>
+          <span className="intel-card__stat-value">91%</span>
+        </div>
+      </div>
+
+      <div className="intel-card__panel intel-card__panel--tight">
+        <p className="intel-card__subhead">Regional spot (yarn)</p>
+        <table className="intel-card__mini-table intel-card__mini-table--flush">
+          <tbody>
+            <tr>
+              <td>India domestic</td>
+              <td className="intel-card__mini-table-num">₹ 62.4/kg</td>
+              <td className="intel-card__delta-inline">+1.1%</td>
+            </tr>
+            <tr>
+              <td>Vietnam import</td>
+              <td className="intel-card__mini-table-num">$1.12/kg</td>
+              <td className="intel-card__delta-inline">+0.6%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div className="intel-card__foot-strip">
+        <span className="intel-card__foot-item">Alerts: 2 new</span>
+        <span className="intel-card__foot-item">Watchlist · Cotton + elastane</span>
       </div>
     </article>
   )
@@ -82,18 +183,9 @@ function IntelCardMarket() {
  */
 function IntelligenceFeatureCards() {
   return (
-    <div className="intel-features" aria-labelledby="intel-features-heading">
-      <div className="intel-features__intro">
-        <h2 id="intel-features-heading" className="intel-features__title">
-          Intelligence you can&apos;t find
-        </h2>
-        <p className="intel-features__subtitle">
-          Deep product analysis, real-time tariff intelligence, and AI-powered negotiation—all in one interface.
-        </p>
-      </div>
-
+    <div className="intel-features">
       <FeatureShowcaseRow
-        visualSide="right"
+        visualSide="left"
         compactVisual
         headingId="intel-feature-hs"
         eyebrow="Classification"
@@ -104,7 +196,7 @@ function IntelligenceFeatureCards() {
       </FeatureShowcaseRow>
 
       <FeatureShowcaseRow
-        visualSide="left"
+        visualSide="right"
         compactVisual
         headingId="intel-feature-negotiation"
         eyebrow="Outreach"
@@ -115,7 +207,7 @@ function IntelligenceFeatureCards() {
       </FeatureShowcaseRow>
 
       <FeatureShowcaseRow
-        visualSide="right"
+        visualSide="left"
         compactVisual
         headingId="intel-feature-market"
         eyebrow="Signals"

@@ -75,6 +75,17 @@ function Section1() {
           </div>
         </div>
 
+        <div className="section-1-intel-lead">
+          <div className="section-1-intel-intro" aria-labelledby="section-1-intel-heading">
+            <h2 id="section-1-intel-heading" className="section-1-intel-intro__title">
+              Intelligence you can&apos;t find
+            </h2>
+            <p className="section-1-intel-intro__subtitle">
+              Deep product analysis, real-time tariff intelligence, and AI-powered negotiation—all in one interface.
+            </p>
+          </div>
+        </div>
+
         <FeatureShowcaseRow
           visualSide="right"
           headingId="feature-showcase-intelligence"
