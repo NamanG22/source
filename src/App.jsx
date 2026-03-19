@@ -7,6 +7,7 @@ import AuthPage from './pages/AuthPage'
 import ProductPediaPage from './pages/ProductPediaPage'
 import CountryPage from './pages/CountryPage'
 import BlogPage from './pages/BlogPage'
+import BlogPostPage from './pages/BlogPostPage'
 import CompetitorPage from './pages/CompetitorPage'
 import MarketplacePage from './pages/MarketplacePage'
 import ListProductPage from './pages/ListProductPage'
@@ -23,6 +24,7 @@ function App() {
         <Route path="/productpedia/:productSlug?" element={<ProductPediaPage />} />
         <Route path="/country/:countryId" element={<CountryPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/competitor/competitor-alibaba" element={<CompetitorPage />} />
         <Route path="/chatbot" element={<Chatbot />} />
         <Route path="/supplier-discovery" element={<SupplierDiscovery />} />
