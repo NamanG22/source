@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { supabase } from '../../lib/supabaseClient'
 import PlatformDropdown from '../PlatformDropdown/PlatformDropdown'
@@ -100,6 +101,9 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
                 {isProfileOpen && (
                   <div className="nav-profile-dropdown">
                     <div className="nav-profile-email">{user.email}</div>
+                    <Link to="/profile" className="nav-profile-link" onClick={() => setIsProfileOpen(false)}>
+                      My profile
+                    </Link>
                     <button type="button" className="nav-profile-logout" onClick={handleLogout}>
                       Log out
                     </button>

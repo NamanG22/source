@@ -123,6 +123,69 @@ create policy "Users can insert own profile"
 
 Then new signups will create a row in `profiles` either via the trigger or via the app.
 
+### 3d. Marketplace: products table
+
+For the marketplace (products listed by suppliers/manufacturers/etc.), create the `products` table. In the SQL Editor, run:
+
+```sql
+create table public.products (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  title text not null,
+  description text,
+  category text,
+  subcategory text,
+  price text,
+  unit text,
+  quantity_available text,
+  image_url text,
+  specifications jsonb default '{}',
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+
+alter table public.products enable row level security;
+
+create policy "Anyone can read products"
+  on public.products for select
+  using (true);
+
+create policy "Users can insert own product"
+  on public.products for insert
+  with check (auth.uid() = user_id);
+
+create policy "Users can update own products"
+  on public.products for update
+  using (auth.uid() = user_id);
+
+create policy "Users can delete own products"
+  on public.products for delete
+  using (auth.uid() = user_id);
+```
+
+To add MOQ (Minimum Order Quantity) to products, run:
+
+```sql
+alter table public.products add column if not exists moq text;
+```
+
+The app does not enforce “non-buyer” in RLS (Supabase RLS cannot read `profiles.business_type` in a simple policy). The app only shows “List your product” to users whose profile has `business_type` ≠ buyer and sends them to the list form; listing is still restricted by the insert policy (only your own `user_id`). To fully restrict inserts to non-buyers you’d need a trigger or function; for now the UI restriction is sufficient.
+
+### 3e. Extended profiles by business type (manufacturer, supplier, distributor)
+
+The app uses **separate extended-profile tables** per business type, linked to the common `profiles` table by `user_id`. Run the full schema in **`supabase/extended_profiles_schema.sql`** in the SQL Editor (creates `manufacturer_profiles`, `supplier_profiles`, `distributor_profiles` with RLS). The profile page shows different questions based on whether the user is a manufacturer, supplier, or distributor.
+
+### 3f. Profile extended fields (legacy / simple non-buyer fields on profiles)
+
+For backward compatibility, these columns on `profiles` are still used. Add them if you haven’t:
+
+```sql
+alter table public.profiles
+  add column if not exists company_name text,
+  add column if not exists plant_location text,
+  add column if not exists website text;
+```
+
 ## 4. (Optional) Email confirmation
 
 - By default Supabase may require users to confirm their email before signing in.

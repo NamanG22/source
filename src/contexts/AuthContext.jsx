@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 import { supabase } from '../lib/supabaseClient'
 
-const AuthContext = createContext({ user: null, loading: true })
+const AuthContext = createContext({ user: null, profile: null, loading: true, canListProducts: false })
 
 export function useAuth() {
   const context = useContext(AuthContext)
@@ -13,6 +13,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
+  const [profile, setProfile] = useState(null)
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
@@ -30,8 +31,24 @@ export function AuthProvider({ children }) {
     return () => subscription.unsubscribe()
   }, [])
 
+  useEffect(() => {
+    if (!supabase || !user?.id) {
+      setProfile(null)
+      return
+    }
+    supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', user.id)
+      .single()
+      .then(({ data }) => setProfile(data))
+      .catch(() => setProfile(null))
+  }, [user?.id])
+
+  const canListProducts = Boolean(profile?.business_type && profile.business_type !== 'buyer')
+
   return (
-    <AuthContext.Provider value={{ user, loading }}>
+    <AuthContext.Provider value={{ user, profile, loading, canListProducts }}>
       {children}
     </AuthContext.Provider>
   )

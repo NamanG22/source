@@ -12,7 +12,7 @@ function Hero() {
   useEffect(() => {
     const t = setInterval(() => {
       setWordIndex((i) => (i + 1) % ROTATING_WORDS.length)
-    }, 2000)
+    }, 1500)
     return () => clearInterval(t)
   }, [])
 

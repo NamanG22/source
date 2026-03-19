@@ -1,0 +1,147 @@
+.productpedia-page {
+  min-height: 60vh;
+  padding: 2rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.productpedia-page--dashboard {
+  max-width: none;
+  padding-bottom: 0;
+}
+
+.productpedia-hero {
+  margin-bottom: 2.5rem;
+}
+
+.productpedia-hero-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5rem 0;
+}
+
+.productpedia-hero-subtitle {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  margin: 0 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.productpedia-search-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  max-width: 520px;
+}
+
+.productpedia-search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: var(--color-bg-elevated);
+  color: var(--color-text);
+}
+
+.productpedia-search-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px var(--color-accent-soft);
+}
+
+.productpedia-search-input::placeholder {
+  color: var(--color-text-muted);
+}
+
+.productpedia-search-btn {
+  padding: 0.75rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--color-accent);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s ease;
+}
+
+.productpedia-search-btn:hover {
+  background: var(--color-accent-hover);
+}
+
+.productpedia-search-hint {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin: 0.5rem 0 0 0;
+}
+
+.productpedia-search-hint--error {
+  color: var(--color-accent);
+}
+
+.productpedia-quick-links {
+  margin-bottom: 2rem;
+}
+
+.productpedia-quick-links-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 1rem 0;
+}
+
+.productpedia-quick-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.productpedia-quick-link {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.productpedia-quick-link:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.productpedia-quick-link-name {
+  font-size: 0.9375rem;
+  font-weight: 500;
+}
+
+.productpedia-quick-link-hsn {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 0.25rem;
+}
+
+.productpedia-back-wrap {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.productpedia-back {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.productpedia-back:hover {
+  text-decoration: underline;
+}

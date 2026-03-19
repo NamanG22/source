@@ -318,6 +318,7 @@ function MobileMenu({ isOpen, onClose }) {
           <>
             <div className="menu-divider"></div>
             <div className="menu-user-email">{user.email}</div>
+            <a href="/profile" className="menu-link" onClick={handleClose}>My profile</a>
             <button type="button" className="menu-logout" onClick={handleLogout}>Log out</button>
           </>
         ) : (

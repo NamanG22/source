@@ -150,6 +150,20 @@
   white-space: nowrap;
 }
 
+.nav-profile-link {
+  display: block;
+  padding: 0.625rem 1rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.nav-profile-link:hover {
+  background: var(--color-bg);
+}
+
 .nav-profile-logout {
   display: block;
   width: 100%;
