@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import Navigation from '../Navigation/Navigation'
 import MobileMenu from '../MobileMenu/MobileMenu'
 import PageMask from '../PageMask/PageMask'
 import Hero from '../Hero/Hero'
@@ -20,10 +19,9 @@ function Home() {
 
   return (
     <div className="App">
-      <Navigation isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <PageMask isVisible={isMenuOpen} onClick={closeMenu} />
       <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
-      <Hero />
+      <Hero isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       <Section1 />
       <Section2 />
       <Section4 />

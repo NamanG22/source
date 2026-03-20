@@ -3,14 +3,12 @@ import { Link } from 'react-router-dom'
 import { useAuth } from '../../contexts/AuthContext'
 import { supabase } from '../../lib/supabaseClient'
 import PlatformDropdown from '../PlatformDropdown/PlatformDropdown'
-import SolutionsDropdown from '../SolutionsDropdown/SolutionsDropdown'
 import ResourcesDropdown from '../ResourcesDropdown/ResourcesDropdown'
 import './Navigation.css'
 
-function Navigation({ isMenuOpen, setIsMenuOpen }) {
+function Navigation({ isMenuOpen, setIsMenuOpen, heroEmbed = false }) {
   const { user } = useAuth()
   const [isPlatformOpen, setIsPlatformOpen] = useState(false)
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false)
   const [isResourcesOpen, setIsResourcesOpen] = useState(false)
   const [isProfileOpen, setIsProfileOpen] = useState(false)
   const profileRef = useRef(null)
@@ -30,48 +28,41 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
 
   return (
     <>
-      <nav className="nav-bar">
+      <nav className={`nav-bar${heroEmbed ? ' nav-bar--hero' : ''}`}>
         <div className="nav-container">
-          <div className="nav-left">
-            <a href="/" className="logo-link">
-              <div className="logo-text">Source Central</div>
-            </a>
-            <div 
+          <div className={`nav-left${heroEmbed ? ' nav-left--hero' : ''}`}>
+            {!heroEmbed && (
+              <a href="/" className="logo-link">
+                <div className="logo-text">Source Central</div>
+              </a>
+            )}
+            <div
               className="nav-link-wrapper"
               onMouseEnter={() => setIsPlatformOpen(true)}
               onMouseLeave={() => setIsPlatformOpen(false)}
             >
               <a href="#" className="nav-link">
                 <span>Platform</span>
-                <svg className="dropdown-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M4.10487 5.54846C4.35425 5.33025 4.73331 5.35552 4.95152 5.6049L7.69894 8.74481C7.85831 8.92694 8.14164 8.92694 8.301 8.74481L11.0484 5.6049C11.2666 5.35552 11.6457 5.33025 11.8951 5.54846C12.1445 5.76667 12.1697 6.14572 11.9515 6.3951L9.20409 9.53502C8.56664 10.2635 7.43331 10.2635 6.79585 9.53502L4.04843 6.3951C3.83022 6.14572 3.85549 5.76667 4.10487 5.54846Z" fill="currentColor"></path>
-                </svg>
+                {!heroEmbed && (
+                  <svg className="dropdown-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M4.10487 5.54846C4.35425 5.33025 4.73331 5.35552 4.95152 5.6049L7.69894 8.74481C7.85831 8.92694 8.14164 8.92694 8.301 8.74481L11.0484 5.6049C11.2666 5.35552 11.6457 5.33025 11.8951 5.54846C12.1445 5.76667 12.1697 6.14572 11.9515 6.3951L9.20409 9.53502C8.56664 10.2635 7.43331 10.2635 6.79585 9.53502L4.04843 6.3951C3.83022 6.14572 3.85549 5.76667 4.10487 5.54846Z" fill="currentColor"></path>
+                  </svg>
+                )}
               </a>
               <PlatformDropdown isOpen={isPlatformOpen} onClose={() => setIsPlatformOpen(false)} />
             </div>
-            {/* <div 
-              className="nav-link-wrapper"
-              onMouseEnter={() => setIsSolutionsOpen(true)}
-              onMouseLeave={() => setIsSolutionsOpen(false)}
-            >
-              <a href="#" className="nav-link">
-                <span>Solutions</span>
-                <svg className="dropdown-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M4.10487 5.54846C4.35425 5.33025 4.73331 5.35552 4.95152 5.6049L7.69894 8.74481C7.85831 8.92694 8.14164 8.92694 8.301 8.74481L11.0484 5.6049C11.2666 5.35552 11.6457 5.33025 11.8951 5.54846C12.1445 5.76667 12.1697 6.14572 11.9515 6.3951L9.20409 9.53502C8.56664 10.2635 7.43331 10.2635 6.79585 9.53502L4.04843 6.3951C3.83022 6.14572 3.85549 5.76667 4.10487 5.54846Z" fill="currentColor"></path>
-                </svg>
-              </a>
-              <SolutionsDropdown isOpen={isSolutionsOpen} onClose={() => setIsSolutionsOpen(false)} />
-            </div> */}
-            <div 
+            <div
               className="nav-link-wrapper"
               onMouseEnter={() => setIsResourcesOpen(true)}
               onMouseLeave={() => setIsResourcesOpen(false)}
             >
               <a href="#" className="nav-link">
                 <span>Resources</span>
-                <svg className="dropdown-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fillRule="evenodd" clipRule="evenodd" d="M4.10487 5.54846C4.35425 5.33025 4.73331 5.35552 4.95152 5.6049L7.69894 8.74481C7.85831 8.92694 8.14164 8.92694 8.301 8.74481L11.0484 5.6049C11.2666 5.35552 11.6457 5.33025 11.8951 5.54846C12.1445 5.76667 12.1697 6.14572 11.9515 6.3951L9.20409 9.53502C8.56664 10.2635 7.43331 10.2635 6.79585 9.53502L4.04843 6.3951C3.83022 6.14572 3.85549 5.76667 4.10487 5.54846Z" fill="currentColor"></path>
-                </svg>
+                {!heroEmbed && (
+                  <svg className="dropdown-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M4.10487 5.54846C4.35425 5.33025 4.73331 5.35552 4.95152 5.6049L7.69894 8.74481C7.85831 8.92694 8.14164 8.92694 8.301 8.74481L11.0484 5.6049C11.2666 5.35552 11.6457 5.33025 11.8951 5.54846C12.1445 5.76667 12.1697 6.14572 11.9515 6.3951L9.20409 9.53502C8.56664 10.2635 7.43331 10.2635 6.79585 9.53502L4.04843 6.3951C3.83022 6.14572 3.85549 5.76667 4.10487 5.54846Z" fill="currentColor"></path>
+                  </svg>
+                )}
               </a>
               <ResourcesDropdown isOpen={isResourcesOpen} onClose={() => setIsResourcesOpen(false)} />
             </div>
@@ -80,8 +71,18 @@ function Navigation({ isMenuOpen, setIsMenuOpen }) {
             {/* <a href="https://calendly.com/sourcentral/30-minute-meeting" target="_blank" rel="noopener noreferrer" className="nav-text-link">Book a demo</a> */}
             {!user ? (
               <>
-                <a href="/auth?mode=login" className="nav-text-link">Log in</a>
-                <a href="/auth?mode=signup" className="nav-button">Sign up</a>
+                <a
+                  href="/auth?mode=login"
+                  className={`nav-text-link${heroEmbed ? ' nav-auth-hero' : ''}`}
+                >
+                  Log in
+                </a>
+                <a
+                  href="/auth?mode=signup"
+                  className={heroEmbed ? 'nav-text-link nav-auth-hero' : 'nav-button'}
+                >
+                  Sign up
+                </a>
               </>
             ) : (
               <div className="nav-profile-wrapper" ref={profileRef}>

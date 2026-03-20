@@ -1,91 +1,155 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useState, useRef, useEffect, useCallback } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import Navigation from '../Navigation/Navigation'
 import './Hero.css'
 
-const ROTATING_WORDS = ['easily.', 'smarter.', 'faster.', 'with confidence.']
+const AMBIENT_LINKS = [
+  { label: 'Marketplace', to: '/marketplace', position: 'n' },
+  { label: 'ProductPedia', to: '/productpedia', position: 'e' },
+  { label: 'Blog', to: '/blog', position: 's' },
+  { label: 'About', to: '/about-us', position: 'w' },
+]
 
-function Hero() {
-  const [productPediaQuery, setProductPediaQuery] = useState('')
-  const [wordIndex, setWordIndex] = useState(0)
+function Hero({ isMenuOpen, setIsMenuOpen }) {
+  const [searchActive, setSearchActive] = useState(false)
+  const [query, setQuery] = useState('')
   const navigate = useNavigate()
+  const inputRef = useRef(null)
 
-  useEffect(() => {
-    const t = setInterval(() => {
-      setWordIndex((i) => (i + 1) % ROTATING_WORDS.length)
-    }, 1500)
-    return () => clearInterval(t)
+  const openSearch = useCallback(() => {
+    setSearchActive(true)
   }, [])
 
-  const handleProductPediaSearch = () => {
-    const q = productPediaQuery.trim()
+  const closeSearch = useCallback(() => {
+    setSearchActive(false)
+    setQuery('')
+  }, [])
+
+  useEffect(() => {
+    if (!searchActive) return
+    const t = requestAnimationFrame(() => {
+      inputRef.current?.focus()
+    })
+    return () => cancelAnimationFrame(t)
+  }, [searchActive])
+
+  useEffect(() => {
+    if (!searchActive) return
+    function onKey(e) {
+      if (e.key === 'Escape') closeSearch()
+    }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [searchActive, closeSearch])
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault()
+    const q = query.trim()
     if (q) navigate(`/productpedia?q=${encodeURIComponent(q)}`)
     else navigate('/productpedia')
   }
 
-  const handleSuggestion = (suggestion) => {
-    setProductPediaQuery(suggestion)
+  const toggleSearch = () => {
+    if (searchActive) closeSearch()
+    else openSearch()
   }
 
   return (
-    <div className="hero-section">
-      <div className="hero-content">
-        <div className="hero-brand">
-          <div className="hero-logo">Source Central</div>
-          <h1 className="hero-headline">
-            Source from India’s 60M+ MSME{' '}
-            <span className="hero-rotating" key={wordIndex}>
-              {ROTATING_WORDS[wordIndex]}
-            </span>
-          </h1>
-          <div className="hero-tagline">
-            Intelligence-led B2B sourcing - discover, verify, and connect with verified manufacturers.
-          </div>
-        </div>
+    <section className="hero-section" aria-label="Introduction">
+      <div className="hero-atmosphere" aria-hidden>
+        <div className="hero-atmosphere__gradient" />
+        <div className="hero-atmosphere__noise" />
+        <div className="hero-atmosphere__vignette" />
+      </div>
 
-        {/* ProductPedia search */}
-        <div className="hero-productpedia">
-          <div className="productpedia-label">ProductPedia</div>
-          <div className="productpedia-input-wrapper">
-            <input
-              type="text"
-              placeholder="Search by product, HSN code, or keyword..."
-              value={productPediaQuery}
-              onChange={(e) => setProductPediaQuery(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleProductPediaSearch()}
-              className="productpedia-input"
-            />
+      <div className="hero-nav-band">
+        <Navigation
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+          heroEmbed
+        />
+      </div>
+
+      <div className="hero-main hero-main--immersive">
+        <nav className="hero-ambient" aria-label="Primary pages">
+          {AMBIENT_LINKS.map(({ label, to, position }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`hero-ambient__link hero-ambient__link--${position}`}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="hero-centerpiece">
+          <div className="hero-brand-cluster">
+            <div
+              className="hero-brand-text"
+              aria-live="polite"
+              data-search={searchActive}
+            >
+              <span
+                className={`hero-brand-line ${!searchActive ? 'hero-brand-line--visible' : 'hero-brand-line--exit'}`}
+              >
+                SourceCentral
+              </span>
+              <span
+                className={`hero-brand-line ${searchActive ? 'hero-brand-line--visible' : 'hero-brand-line--hidden'}`}
+              >
+                Search any product or HS code
+              </span>
+            </div>
+
             <button
               type="button"
-              onClick={handleProductPediaSearch}
-              className="productpedia-button"
-              title="Search"
+              className="hero-search-trigger"
+              onClick={toggleSearch}
+              aria-expanded={searchActive}
+              aria-label={searchActive ? 'Close search' : 'Open product search'}
             >
-              Search
+              <svg
+                className="hero-search-trigger__icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden
+              >
+                {searchActive ? (
+                  <path d="M18 6L6 18M6 6l12 12" />
+                ) : (
+                  <>
+                    <circle cx="11" cy="11" r="7" />
+                    <path d="M20 20l-3.5-3.5" />
+                  </>
+                )}
+              </svg>
             </button>
           </div>
-          <div className="hero-suggestions">
-            <button type="button" className="suggestion-chip" onClick={() => handleSuggestion('HSN 6109')}>
-              HSN 6109
-            </button>
-            <button type="button" className="suggestion-chip" onClick={() => handleSuggestion('Textiles')}>
-              Textiles
-            </button>
-            <button type="button" className="suggestion-chip" onClick={() => handleSuggestion('Electronics')}>
-              Electronics
-            </button>
-            <button type="button" className="suggestion-chip" onClick={() => handleSuggestion('Engineering goods')}>
-              Engineering goods
-            </button>
+
+          <div
+            className={`hero-search-panel ${searchActive ? 'hero-search-panel--open' : ''}`}
+            aria-hidden={!searchActive}
+          >
+            <form className="hero-search-form" onSubmit={handleSearchSubmit}>
+              <input
+                ref={inputRef}
+                type="search"
+                className="hero-search-input"
+                placeholder="e.g. Sodium Bicarbonate, 2836.30, steel flanges"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                autoComplete="off"
+              />
+            </form>
           </div>
         </div>
       </div>
-      <img
-        src="https://cdn.prod.website-files.com/668b5b657900bc7490aa07fe/668ba543ae98dc7b65f60e40_hero_bg.avif"
-        alt=""
-        className="hero-background-image"
-        aria-hidden
-      />
-    </div>
+    </section>
   )
 }
 
