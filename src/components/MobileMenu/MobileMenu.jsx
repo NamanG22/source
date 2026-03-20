@@ -313,7 +313,7 @@ function MobileMenu({ isOpen, onClose }) {
 
         <a href="/pricing" className="menu-link" onClick={handleClose}>Pricing</a>
         <div className="menu-divider"></div>
-        <a href="https://airtable.com/appYe8ucpUyLBWajT/pagcX2GvDezFe6Xev/form?prefill_ID=" target="_blank" rel="noopener noreferrer" className="menu-link" onClick={handleClose}>Join as supplier</a>
+        <a href="/auth?mode=signup" className="menu-link" onClick={handleClose}>Join as supplier</a>
         {user ? (
           <>
             <div className="menu-divider"></div>

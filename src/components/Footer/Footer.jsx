@@ -314,7 +314,7 @@ function Footer() {
             <a href="https://help.sourcentral.com/en" target="_blank" rel="noopener noreferrer" className="link-block-102 w-inline-block">
               <div className="text-block-28">Help Center<br/></div>
             </a>
-            <a href="https://airtable.com/appYe8ucpUyLBWajT/pagcX2GvDezFe6Xev/form?prefill_ID=" target="_blank" rel="noopener noreferrer" className="link-block-102 w-inline-block">
+            <a href="/auth?mode=signup" className="link-block-102 w-inline-block">
               <div className="text-block-28">Join as a Supplier</div>
             </a>
           </div>

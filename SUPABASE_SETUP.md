@@ -8,7 +8,7 @@ Follow these steps to connect your app to Supabase so signup and login work with
 
 1. Go to [supabase.com](https://supabase.com) and sign in (or create an account).
 2. Click **New project**.
-3. Pick an organization (or create one), name the project (e.g. `sourceready`), set a database password and region, then click **Create new project**.
+3. Pick an organization (or create one), name the project (e.g. `source-central`), set a database password and region, then click **Create new project**.
 4. Wait until the project is ready.
 
 ---

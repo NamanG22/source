@@ -18,18 +18,18 @@
 
 | Area | Exists | Missing / To change |
 |------|--------|---------------------|
-| **Branding** | "Source Central" in nav, hero, footer | Ensure consistent "Source Central" everywhere (some SupplierDiscovery still says "SourceReady") |
+| **Branding** | "Source Central" in nav, hero, footer | Ensure consistent "Source Central" everywhere |
 | **Routes** | `/`, `/chatbot`, `/supplier-discovery` | `/country/china`, `/country/india`, `/blog`, `/competitor/competitor-alibaba`, `/productpedia`, `/marketplace`, Resources (India Export Dashboard, etc.) |
 | **Header** | Nav with Platform, Solutions, Resources | Optional: add Pricing; ensure CTA links point to your app (sourcentral.com) |
 | **Hero** | Tagline + single search bar → chatbot | 1) Add **changing last word** in hero line. 2) Reposition/rename search as **ProductPedia** (HSN/product search) |
 | **Features section** | Section1 (tabs), Section2 (Supplier Discovery, Outreach, Quote Intelligence) | Explicitly call out: **AI-powered RFQ/quote comparison** and **tracking all chats across platforms** |
 | **Before/After** | Section4: Before Source Central / After Source Central | Keep; optionally tighten copy to India/MSME angle |
 | **Country pages** | Footer links to `/country/china`, `/country/india` | **Pages don’t exist** — need full country pages (China, India) with India vs other hubs, Why Source Central |
-| **ProductPedia** | None | **New section/page**: HSN search, trade data, tariffs, manufacturer table; use sourceready.com once for reference |
+| **ProductPedia** | None | **New section/page**: HSN search, trade data, tariffs, manufacturer table; use a comparable product-index UX for reference once |
 | **Marketplace** | None | **New**: Signup/Login, user/manufacturer details, dashboard listings |
-| **Blog** | Footer link `/blog` | **Page doesn’t exist** — add blog listing (can mirror SourceReady structure) |
-| **Comparison** | Footer link `/competitor/competitor-alibaba` | **Page doesn’t exist** — add Source Central vs Alibaba (adapt from SourceReady) |
-| **Resources** | Resources dropdown + footer | Add **India Export Dashboard** (embed/link to Vercel), **full Resources** section from SourceReady, and **Services** list |
+| **Blog** | Footer link `/blog` | **Page doesn’t exist** — add blog listing (standard listing + post layout) |
+| **Comparison** | Footer link `/competitor/competitor-alibaba` | **Page doesn’t exist** — add Source Central vs Alibaba (industry-standard comparison layout) |
+| **Resources** | Resources dropdown + footer | Add **India Export Dashboard** (embed/link to Vercel), **full Resources** section, and **Services** list |
 | **Services list** | Not on site | Add: AI RFQ, Communication management, Logistics tracking, Working capital for manufacturers, CRM integration, Trade Assurance, Quality check |
 
 ---
@@ -52,8 +52,8 @@
 
 | # | Task | Details |
 |---|------|--------|
-| B1 | **`/country/china`** | Full page: hero, key stats, why source from China, link to discovery; adapt structure from SourceReady China page, rebrand to Source Central. |
-| B2 | **`/country/india`** | Full page: hero, India stats (60M+ MSME, export target, etc.), “Why India”, “Why Source Central for India”; adapt from SourceReady India. |
+| B1 | **`/country/china`** | Full page: hero, key stats, why source from China, link to discovery; adapt a strong country-hub layout, rebrand to Source Central. |
+| B2 | **`/country/india`** | Full page: hero, India stats (60M+ MSME, export target, etc.), “Why India”, “Why Source Central for India”; same layout pattern as China. |
 
 ### Phase C — ProductPedia
 
@@ -65,7 +65,7 @@
 | C4 | **Top 10 manufacturing countries** | For the HSN product: list top 10 manufacturing countries (data source TBD). |
 | C5 | **Top 10 importing countries** | For the HSN product: list top 10 importing countries (data source TBD). |
 | C6 | **Tariffs / special conditions** | For product: show tariffs or special conditions (link to tariff calculator or static text for MVP). |
-| C7 | **“Show manufacturers for this HSN”** | If user asks (or button): show a **table of sample manufacturers** for that HSN. Use https://www.sourceready.com/ once for reference; for MVP we can use mock/static table or your backend if ready. |
+| C7 | **“Show manufacturers for this HSN”** | If user asks (or button): show a **table of sample manufacturers** for that HSN. For MVP use mock/static table or your backend if ready. |
 | C8 | **Extra ProductPedia value** | Add 1–2 more useful items (e.g. related HSN codes, growth trend, or “similar products”) — you pick. |
 
 ### Phase D — Marketplace (simplified MVP)
@@ -80,14 +80,14 @@
 
 | # | Task | Details |
 |---|------|--------|
-| E1 | **`/blog`** | Blog listing page; structure from SourceReady. Do you have existing posts (CMS/API) or static list for MVP? |
-| E2 | **`/competitor/competitor-alibaba`** | Source Central vs Alibaba page: structure and content adapted from SourceReady, rebranded to Source Central. |
+| E1 | **`/blog`** | Blog listing page. Do you have existing posts (CMS/API) or static list for MVP? |
+| E2 | **`/competitor/competitor-alibaba`** | Source Central vs Alibaba page: structure and content adapted to Source Central. |
 
 ### Phase F — Resources & services
 
 | # | Task | Details |
 |---|------|--------|
-| F1 | **Copy full Resources section from SourceReady** | Replicate structure: Learn & Connect (Blog, Partner, About Us, Career, Help), Comparison (vs Alibaba, Global Sources, etc.), Tool (Tariff Calculator). All rebranded to Source Central and your URLs. |
+| F1 | **Full Resources section** | Replicate structure: Learn & Connect (Blog, Partner, About Us, Career, Help), Comparison (vs Alibaba, Global Sources, etc.), Tool (Tariff Calculator). All rebranded to Source Central and your URLs. |
 | F2 | **India Export Dashboard** | Add under Resources: link or embed to `https://sourcentral.vercel.app/India_Export_Dashboard.html`. |
 | F3 | **Add reports if any** | E.g. “Global Supply Chain Report 2025”, “Industry Report” — only if you have them; otherwise skip or placeholders. |
 | F4 | **Services we provide** | New section or page listing: 1) AI-generated RFQ, 2) Communication management across platforms, 3) Tracking logistics, 4) Working capital for manufacturers, 5) CRM integration, 6) Trade Assurance, 7) Quality check. You can add short blurbs per service. |
@@ -97,7 +97,7 @@
 | # | Task | Details |
 |---|------|--------|
 | G1 | **Subtle, professional design** | Tidy spacing, typography, and palette; reduce visual noise; align with “investor-ready” and “enterprise B2B”. |
-| G2 | **Reference (optional)** | If you have a reference site (e.g. linear.app, vercel.com, or a specific SourceReady page), share and we align tone. |
+| G2 | **Reference (optional)** | If you have a reference site (e.g. linear.app, vercel.com), share and we align tone. |
 
 ---
 
@@ -112,8 +112,8 @@
 ### ProductPedia & data
 
 4. **HSN + trade data:** Do you have an API or dataset for HSN codes, import/export stats, and top countries? If not, should we use mock/static data for the demo and plug real data later?
-5. **Manufacturer table:** For “show manufacturers for this HSN”, should it open SourceReady once to replicate behavior, or do you have a supplier list/API we should use?
-6. **Tariff calculator:** Link to existing (e.g. sourceready.com/tariff-calculator) or build a simple one on your site?
+5. **Manufacturer table:** For “show manufacturers for this HSN”, do you have a supplier list/API we should use, or mock/static for MVP?
+6. **Tariff calculator:** Link to your existing tariff tool or build a simple one on your site?
 
 ### Marketplace
 
@@ -123,7 +123,7 @@
 ### Blog & content
 
 9. **Blog:** Do you have a CMS or list of posts? Or should we create a static “Blog” page with 2–3 placeholder posts for the meeting?
-10. **Country pages:** Prefer long-form (like SourceReady) or shorter, punchier versions for India/China?
+10. **Country pages:** Prefer long-form or shorter, punchier versions for India/China?
 
 ### Resources & dashboard
 
