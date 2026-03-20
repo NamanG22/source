@@ -187,6 +187,7 @@ function IntelligenceFeatureCards() {
       <FeatureShowcaseRow
         visualSide="left"
         compactVisual
+        wideGap
         headingId="intel-feature-hs"
         eyebrow="Classification"
         title="HS code deep-dive"
@@ -209,6 +210,7 @@ function IntelligenceFeatureCards() {
       <FeatureShowcaseRow
         visualSide="left"
         compactVisual
+        wideGap
         headingId="intel-feature-market"
         eyebrow="Signals"
         title="Market intelligence"

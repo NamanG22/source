@@ -12,6 +12,8 @@ function FeatureShowcaseRow({
   headingId = 'feature-showcase-heading',
   /** Shorter visuals (e.g. static cards) — don’t reserve the tall demo min-height */
   compactVisual = false,
+  /** Extra horizontal space between copy and visual */
+  wideGap = false,
   children,
 }) {
   const copy = (
@@ -32,6 +34,7 @@ function FeatureShowcaseRow({
     'feature-showcase-row',
     `feature-showcase-row--visual-${visualSide}`,
     compactVisual ? 'feature-showcase-row--compact-visual' : '',
+    wideGap ? 'feature-showcase-row--wide-gap' : '',
   ]
     .filter(Boolean)
     .join(' ')

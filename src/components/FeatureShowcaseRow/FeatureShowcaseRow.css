@@ -15,6 +15,11 @@
   margin: 0 auto;
 }
 
+/* Wider gutter between copy and visual (e.g. 2nd & 4th feature bands) */
+.feature-showcase-row--wide-gap .feature-showcase-row__inner {
+  column-gap: clamp(3.5rem, 7vw, 6rem);
+}
+
 .feature-showcase-row__copy {
   text-align: left;
 }
