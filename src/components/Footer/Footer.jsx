@@ -171,7 +171,7 @@ function Footer() {
             </a>
             <div className="div-block-64-copy inside">
               <div className="text-block-27">Contact us</div>
-              <a href="https://docs.google.com/forms/d/e/1FAIpQLScIQqZhgscEgCDsnn6-eIVzqq4vvIzuluXOUexwtJJgvwHclQ/viewform?usp=header" className="link-block-102 w-inline-block">
+              <a href="/auth?mode=signup" className="link-block-102 w-inline-block">
                 <div className="text-block-28">Join as supplier</div>
               </a>
               <a href="tel:+919311139914" className="link-block-102 w-inline-block">
